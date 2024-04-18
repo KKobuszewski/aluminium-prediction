@@ -1,0 +1,39 @@
+[build-system]
+requires = [ "setuptools",]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "aluminium_prediction"
+readme = "README.md"
+dynamic = [ "dependencies", "version",]
+
+[project.scripts]
+aluminium-prediction = "aluminium_prediction.__main__:main"
+
+[tool.kedro]
+package_name = "aluminium_prediction"
+project_name = "aluminium-prediction"
+kedro_init_version = "0.19.4"
+tools = [ "Testing", "Custom Logging", "Data Structure", "Kedro Viz",]
+example_pipeline = "True"
+source_dir = "src"
+
+[project.entry-points."kedro.hooks"]
+
+[tool.pytest.ini_options]
+addopts = "--cov-report term-missing --cov src/aluminium_prediction -ra"
+
+[tool.coverage.report]
+fail_under = 0
+show_missing = true
+exclude_lines = [ "pragma: no cover", "raise NotImplementedError",]
+
+[tool.setuptools.dynamic.dependencies]
+file = "requirements.txt"
+
+[tool.setuptools.dynamic.version]
+attr = "aluminium_prediction.__version__"
+
+[tool.setuptools.packages.find]
+where = [ "src",]
+namespaces = false
