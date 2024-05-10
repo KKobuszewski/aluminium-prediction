@@ -1,0 +1,408 @@
+[
+    {
+        "label": "BeautifulSoup",
+        "importPath": "bs4",
+        "description": "bs4",
+        "isExtraImport": true,
+        "detail": "bs4",
+        "documentation": {}
+    },
+    {
+        "label": "webdriver",
+        "importPath": "selenium",
+        "description": "selenium",
+        "isExtraImport": true,
+        "detail": "selenium",
+        "documentation": {}
+    },
+    {
+        "label": "By",
+        "importPath": "selenium.webdriver.common.by",
+        "description": "selenium.webdriver.common.by",
+        "isExtraImport": true,
+        "detail": "selenium.webdriver.common.by",
+        "documentation": {}
+    },
+    {
+        "label": "Service",
+        "importPath": "selenium.webdriver.chrome.service",
+        "description": "selenium.webdriver.chrome.service",
+        "isExtraImport": true,
+        "detail": "selenium.webdriver.chrome.service",
+        "documentation": {}
+    },
+    {
+        "label": "ChromeDriverManager",
+        "importPath": "webdriver_manager.chrome",
+        "description": "webdriver_manager.chrome",
+        "isExtraImport": true,
+        "detail": "webdriver_manager.chrome",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "datetime",
+        "description": "datetime",
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "numpy",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "numpy",
+        "description": "numpy",
+        "detail": "numpy",
+        "documentation": {}
+    },
+    {
+        "label": "pandas",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pandas",
+        "description": "pandas",
+        "detail": "pandas",
+        "documentation": {}
+    },
+    {
+        "label": "Pipeline",
+        "importPath": "kedro.pipeline",
+        "description": "kedro.pipeline",
+        "isExtraImport": true,
+        "detail": "kedro.pipeline",
+        "documentation": {}
+    },
+    {
+        "label": "pipeline",
+        "importPath": "kedro.pipeline",
+        "description": "kedro.pipeline",
+        "isExtraImport": true,
+        "detail": "kedro.pipeline",
+        "documentation": {}
+    },
+    {
+        "label": "node",
+        "importPath": "kedro.pipeline",
+        "description": "kedro.pipeline",
+        "isExtraImport": true,
+        "detail": "kedro.pipeline",
+        "documentation": {}
+    },
+    {
+        "label": "Pipeline",
+        "importPath": "kedro.pipeline",
+        "description": "kedro.pipeline",
+        "isExtraImport": true,
+        "detail": "kedro.pipeline",
+        "documentation": {}
+    },
+    {
+        "label": "pipeline",
+        "importPath": "kedro.pipeline",
+        "description": "kedro.pipeline",
+        "isExtraImport": true,
+        "detail": "kedro.pipeline",
+        "documentation": {}
+    },
+    {
+        "label": "node",
+        "importPath": "kedro.pipeline",
+        "description": "kedro.pipeline",
+        "isExtraImport": true,
+        "detail": "kedro.pipeline",
+        "documentation": {}
+    },
+    {
+        "label": "westmetall_download",
+        "importPath": "aluminium_prediction.pipelines.aquisition.nodes",
+        "description": "aluminium_prediction.pipelines.aquisition.nodes",
+        "isExtraImport": true,
+        "detail": "aluminium_prediction.pipelines.aquisition.nodes",
+        "documentation": {}
+    },
+    {
+        "label": "Dict",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "find_pipelines",
+        "importPath": "kedro.framework.project",
+        "description": "kedro.framework.project",
+        "isExtraImport": true,
+        "detail": "kedro.framework.project",
+        "documentation": {}
+    },
+    {
+        "label": "create_pipeline",
+        "importPath": "aluminium_prediction.pipelines.aquisition.pipeline",
+        "description": "aluminium_prediction.pipelines.aquisition.pipeline",
+        "isExtraImport": true,
+        "detail": "aluminium_prediction.pipelines.aquisition.pipeline",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "SQLiteStore",
+        "importPath": "kedro_viz.integrations.kedro.sqlite_store",
+        "description": "kedro_viz.integrations.kedro.sqlite_store",
+        "isExtraImport": true,
+        "detail": "kedro_viz.integrations.kedro.sqlite_store",
+        "documentation": {}
+    },
+    {
+        "label": "OmegaConfigLoader",
+        "importPath": "kedro.config",
+        "description": "kedro.config",
+        "isExtraImport": true,
+        "detail": "kedro.config",
+        "documentation": {}
+    },
+    {
+        "label": "OmegaConfigLoader",
+        "importPath": "kedro.config",
+        "description": "kedro.config",
+        "isExtraImport": true,
+        "detail": "kedro.config",
+        "documentation": {}
+    },
+    {
+        "label": "logging",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "logging",
+        "description": "logging",
+        "detail": "logging",
+        "documentation": {}
+    },
+    {
+        "label": "pytest",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pytest",
+        "description": "pytest",
+        "detail": "pytest",
+        "documentation": {}
+    },
+    {
+        "label": "DataCatalog",
+        "importPath": "kedro.io",
+        "description": "kedro.io",
+        "isExtraImport": true,
+        "detail": "kedro.io",
+        "documentation": {}
+    },
+    {
+        "label": "SequentialRunner",
+        "importPath": "kedro.runner",
+        "description": "kedro.runner",
+        "isExtraImport": true,
+        "detail": "kedro.runner",
+        "documentation": {}
+    },
+    {
+        "label": "create_pipeline",
+        "importPath": "aluminium_prediction.pipelines.data_science",
+        "description": "aluminium_prediction.pipelines.data_science",
+        "isExtraImport": true,
+        "detail": "aluminium_prediction.pipelines.data_science",
+        "documentation": {}
+    },
+    {
+        "label": "split_data",
+        "importPath": "aluminium_prediction.pipelines.data_science.nodes",
+        "description": "aluminium_prediction.pipelines.data_science.nodes",
+        "isExtraImport": true,
+        "detail": "aluminium_prediction.pipelines.data_science.nodes",
+        "documentation": {}
+    },
+    {
+        "label": "KedroContext",
+        "importPath": "kedro.framework.context",
+        "description": "kedro.framework.context",
+        "isExtraImport": true,
+        "detail": "kedro.framework.context",
+        "documentation": {}
+    },
+    {
+        "label": "_create_hook_manager",
+        "importPath": "kedro.framework.hooks",
+        "description": "kedro.framework.hooks",
+        "isExtraImport": true,
+        "detail": "kedro.framework.hooks",
+        "documentation": {}
+    },
+    {
+        "label": "get_selenium_driver",
+        "kind": 2,
+        "importPath": "src.aluminium_prediction.pipelines.aquisition.nodes",
+        "description": "src.aluminium_prediction.pipelines.aquisition.nodes",
+        "peekOfCode": "def get_selenium_driver():\n    options = webdriver.ChromeOptions()\n    options.add_argument(\"--headless=new\") # run browser in headless mode\n    driver = webdriver.Chrome(service=ChromeService( ChromeDriverManager().install() ),\n                              options=options) \n    return driver\ndef westmetall_download(page_url = 'https://www.westmetall.com/en/markdaten.php?action=table&field=LME_Al_cash'):\n    driver = get_selenium_driver()\n    driver.get(page_url)\n    # find tbody of table to be parsed",
+        "detail": "src.aluminium_prediction.pipelines.aquisition.nodes",
+        "documentation": {}
+    },
+    {
+        "label": "westmetall_download",
+        "kind": 2,
+        "importPath": "src.aluminium_prediction.pipelines.aquisition.nodes",
+        "description": "src.aluminium_prediction.pipelines.aquisition.nodes",
+        "peekOfCode": "def westmetall_download(page_url = 'https://www.westmetall.com/en/markdaten.php?action=table&field=LME_Al_cash'):\n    driver = get_selenium_driver()\n    driver.get(page_url)\n    # find tbody of table to be parsed\n    elements = driver.find_elements(By.TAG_NAME, 'tbody')\n    # count number of elements containing data\n    cnt = 0\n    for elem in elements:\n        for line in elem.text.split('\\n'):\n            if ('LME' in line):",
+        "detail": "src.aluminium_prediction.pipelines.aquisition.nodes",
+        "documentation": {}
+    },
+    {
+        "label": "month_dict",
+        "kind": 5,
+        "importPath": "src.aluminium_prediction.pipelines.aquisition.nodes",
+        "description": "src.aluminium_prediction.pipelines.aquisition.nodes",
+        "peekOfCode": "month_dict = { 'January'  : 1,\n               'February' : 2,\n               'March'    : 3,\n               'April'    : 4,\n               'May'      : 5,\n               'June'     : 6,\n               'July'     : 7,\n               'August'   : 8,\n               'September': 9,\n               'October'  : 10,",
+        "detail": "src.aluminium_prediction.pipelines.aquisition.nodes",
+        "documentation": {}
+    },
+    {
+        "label": "create_pipeline",
+        "kind": 2,
+        "importPath": "src.aluminium_prediction.pipelines.aquisition.pipeline",
+        "description": "src.aluminium_prediction.pipelines.aquisition.pipeline",
+        "peekOfCode": "def create_pipeline(**kwargs) -> Pipeline:\n    return pipeline(\n        [\n            node(\n                westmetall_download,\n                inputs=None,\n                outputs=\"westmetall_dataset\",\n                name=\"westmetall_download_node\",\n            ),\n        ]",
+        "detail": "src.aluminium_prediction.pipelines.aquisition.pipeline",
+        "documentation": {}
+    },
+    {
+        "label": "register_pipelines",
+        "kind": 2,
+        "importPath": "src.aluminium_prediction.pipeline_registry",
+        "description": "src.aluminium_prediction.pipeline_registry",
+        "peekOfCode": "def register_pipelines() -> Dict[str, Pipeline]:\n    \"\"\"Register the project's pipelines.\n    Returns:\n        A mapping from pipeline names to ``Pipeline`` objects.\n    \"\"\"\n    pipelines = find_pipelines()\n    pipelines[\"__default__\"] = sum(pipelines.values())\n    pipelines[\"aquisition\"] = aquisition_pipeline()\n    return pipelines",
+        "detail": "src.aluminium_prediction.pipeline_registry",
+        "documentation": {}
+    },
+    {
+        "label": "SESSION_STORE_CLASS",
+        "kind": 5,
+        "importPath": "src.aluminium_prediction.settings",
+        "description": "src.aluminium_prediction.settings",
+        "peekOfCode": "SESSION_STORE_CLASS = SQLiteStore\n# Keyword arguments to pass to the `SESSION_STORE_CLASS` constructor.\nSESSION_STORE_ARGS = {\"path\": str(Path(__file__).parents[2])}\n# Directory that holds configuration.\n# CONF_SOURCE = \"conf\"\n# Class that manages how configuration is loaded.\nfrom kedro.config import OmegaConfigLoader  # noqa: E402\nCONFIG_LOADER_CLASS = OmegaConfigLoader\n# Keyword arguments to pass to the `CONFIG_LOADER_CLASS` constructor.\nCONFIG_LOADER_ARGS = {",
+        "detail": "src.aluminium_prediction.settings",
+        "documentation": {}
+    },
+    {
+        "label": "SESSION_STORE_ARGS",
+        "kind": 5,
+        "importPath": "src.aluminium_prediction.settings",
+        "description": "src.aluminium_prediction.settings",
+        "peekOfCode": "SESSION_STORE_ARGS = {\"path\": str(Path(__file__).parents[2])}\n# Directory that holds configuration.\n# CONF_SOURCE = \"conf\"\n# Class that manages how configuration is loaded.\nfrom kedro.config import OmegaConfigLoader  # noqa: E402\nCONFIG_LOADER_CLASS = OmegaConfigLoader\n# Keyword arguments to pass to the `CONFIG_LOADER_CLASS` constructor.\nCONFIG_LOADER_ARGS = {\n      \"base_env\": \"base\",\n      \"default_run_env\": \"local\",",
+        "detail": "src.aluminium_prediction.settings",
+        "documentation": {}
+    },
+    {
+        "label": "CONFIG_LOADER_CLASS",
+        "kind": 5,
+        "importPath": "src.aluminium_prediction.settings",
+        "description": "src.aluminium_prediction.settings",
+        "peekOfCode": "CONFIG_LOADER_CLASS = OmegaConfigLoader\n# Keyword arguments to pass to the `CONFIG_LOADER_CLASS` constructor.\nCONFIG_LOADER_ARGS = {\n      \"base_env\": \"base\",\n      \"default_run_env\": \"local\",\n#       \"config_patterns\": {\n#           \"spark\" : [\"spark*/\"],\n#           \"parameters\": [\"parameters*\", \"parameters*/**\", \"**/parameters*\"],\n#       }\n}",
+        "detail": "src.aluminium_prediction.settings",
+        "documentation": {}
+    },
+    {
+        "label": "CONFIG_LOADER_ARGS",
+        "kind": 5,
+        "importPath": "src.aluminium_prediction.settings",
+        "description": "src.aluminium_prediction.settings",
+        "peekOfCode": "CONFIG_LOADER_ARGS = {\n      \"base_env\": \"base\",\n      \"default_run_env\": \"local\",\n#       \"config_patterns\": {\n#           \"spark\" : [\"spark*/\"],\n#           \"parameters\": [\"parameters*\", \"parameters*/**\", \"**/parameters*\"],\n#       }\n}\n# Class that manages Kedro's library components.\n# from kedro.framework.context import KedroContext",
+        "detail": "src.aluminium_prediction.settings",
+        "documentation": {}
+    },
+    {
+        "label": "dummy_data",
+        "kind": 2,
+        "importPath": "tests.pipelines.data_science.test_pipeline",
+        "description": "tests.pipelines.data_science.test_pipeline",
+        "peekOfCode": "def dummy_data():\n    return pd.DataFrame(\n        {\n            \"engines\": [1, 2, 3],\n            \"crew\": [4, 5, 6],\n            \"passenger_capacity\": [5, 6, 7],\n            \"price\": [120, 290, 30],\n        }\n    )\n@pytest.fixture",
+        "detail": "tests.pipelines.data_science.test_pipeline",
+        "documentation": {}
+    },
+    {
+        "label": "dummy_parameters",
+        "kind": 2,
+        "importPath": "tests.pipelines.data_science.test_pipeline",
+        "description": "tests.pipelines.data_science.test_pipeline",
+        "peekOfCode": "def dummy_parameters():\n    parameters = {\n        \"model_options\": {\n            \"test_size\": 0.2,\n            \"random_state\": 3,\n            \"features\": [\"engines\", \"passenger_capacity\", \"crew\"],\n        }\n    }\n    return parameters\ndef test_split_data(dummy_data, dummy_parameters):",
+        "detail": "tests.pipelines.data_science.test_pipeline",
+        "documentation": {}
+    },
+    {
+        "label": "test_split_data",
+        "kind": 2,
+        "importPath": "tests.pipelines.data_science.test_pipeline",
+        "description": "tests.pipelines.data_science.test_pipeline",
+        "peekOfCode": "def test_split_data(dummy_data, dummy_parameters):\n    X_train, X_test, y_train, y_test = split_data(\n        dummy_data, dummy_parameters[\"model_options\"]\n    )\n    assert len(X_train) == 2\n    assert len(y_train) == 2\n    assert len(X_test) == 1\n    assert len(y_test) == 1\ndef test_split_data_missing_price(dummy_data, dummy_parameters):\n    dummy_data_missing_price = dummy_data.drop(columns=\"price\")",
+        "detail": "tests.pipelines.data_science.test_pipeline",
+        "documentation": {}
+    },
+    {
+        "label": "test_split_data_missing_price",
+        "kind": 2,
+        "importPath": "tests.pipelines.data_science.test_pipeline",
+        "description": "tests.pipelines.data_science.test_pipeline",
+        "peekOfCode": "def test_split_data_missing_price(dummy_data, dummy_parameters):\n    dummy_data_missing_price = dummy_data.drop(columns=\"price\")\n    with pytest.raises(KeyError) as e_info:\n        X_train, X_test, y_train, y_test = split_data(dummy_data_missing_price, dummy_parameters[\"model_options\"])\n    assert \"price\" in str(e_info.value)\ndef test_data_science_pipeline(caplog, dummy_data, dummy_parameters):\n    pipeline = (\n        create_ds_pipeline()\n        .from_nodes(\"split_data_node\")\n        .to_nodes(\"evaluate_model_node\")",
+        "detail": "tests.pipelines.data_science.test_pipeline",
+        "documentation": {}
+    },
+    {
+        "label": "test_data_science_pipeline",
+        "kind": 2,
+        "importPath": "tests.pipelines.data_science.test_pipeline",
+        "description": "tests.pipelines.data_science.test_pipeline",
+        "peekOfCode": "def test_data_science_pipeline(caplog, dummy_data, dummy_parameters):\n    pipeline = (\n        create_ds_pipeline()\n        .from_nodes(\"split_data_node\")\n        .to_nodes(\"evaluate_model_node\")\n    )\n    catalog = DataCatalog()\n    catalog.add_feed_dict(\n        {\n            \"model_input_table\" : dummy_data,",
+        "detail": "tests.pipelines.data_science.test_pipeline",
+        "documentation": {}
+    },
+    {
+        "label": "TestProjectContext",
+        "kind": 6,
+        "importPath": "tests.test_run",
+        "description": "tests.test_run",
+        "peekOfCode": "class TestProjectContext:\n    def test_project_path(self, project_context):\n        assert project_context.project_path == Path.cwd()",
+        "detail": "tests.test_run",
+        "documentation": {}
+    },
+    {
+        "label": "config_loader",
+        "kind": 2,
+        "importPath": "tests.test_run",
+        "description": "tests.test_run",
+        "peekOfCode": "def config_loader():\n    return OmegaConfigLoader(conf_source=str(Path.cwd()))\n@pytest.fixture\ndef project_context(config_loader):\n    return KedroContext(\n        package_name=\"aluminium_prediction\",\n        project_path=Path.cwd(),\n        config_loader=config_loader,\n        hook_manager=_create_hook_manager(),\n    )",
+        "detail": "tests.test_run",
+        "documentation": {}
+    },
+    {
+        "label": "project_context",
+        "kind": 2,
+        "importPath": "tests.test_run",
+        "description": "tests.test_run",
+        "peekOfCode": "def project_context(config_loader):\n    return KedroContext(\n        package_name=\"aluminium_prediction\",\n        project_path=Path.cwd(),\n        config_loader=config_loader,\n        hook_manager=_create_hook_manager(),\n    )\n# The tests below are here for the demonstration purpose\n# and should be replaced with the ones testing the project\n# functionality",
+        "detail": "tests.test_run",
+        "documentation": {}
+    }
+]
