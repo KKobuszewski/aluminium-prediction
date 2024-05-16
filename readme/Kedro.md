@@ -28,6 +28,14 @@ You can run your Kedro project with:
 kedro run
 ```
 
+You can run your Kedro Viz with:
+
+```
+kedro viz
+```
+
+Probably, it should be preceded with `poetry run` to enable all packages needed to run the project.
+
 ## How to test your Kedro project
 
 Have a look at the files `src/tests/test_run.py` and `src/tests/pipelines/data_science/test_pipeline.py` for instructions on how to write your tests. Run the tests as follows:

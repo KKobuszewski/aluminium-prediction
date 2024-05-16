@@ -4,8 +4,13 @@ generated using Kedro 0.19.3
 """
 
 from kedro.pipeline import Pipeline, pipeline, node
-from aluminium_prediction.pipelines.aquisition.nodes import (westmetall_download, investing_download, investing_actualize)
+from aluminium_prediction.pipelines.aquisition.nodes import (westmetall_download, westmetall_actualize, 
+                                                             investing_download, investing_actualize)
 
+
+"""
+poetry run kedro run --from-nodes "investing_download_node"
+"""
 
 def create_pipeline(**kwargs) -> Pipeline:
     return pipeline(
@@ -13,8 +18,14 @@ def create_pipeline(**kwargs) -> Pipeline:
             node(
                 westmetall_download,
                 inputs=None,
-                outputs="westmetall_dataset",
+                outputs="westmetall_download",
                 name="westmetall_download_node",
+            ),
+            node(
+                westmetall_actualize,
+                inputs=["westmetall_dataset","westmetall_download"],
+                outputs="westmetall_dataset_updated",
+                name="westmetall_actualize_node",
             ),
             node(
                 investing_download,

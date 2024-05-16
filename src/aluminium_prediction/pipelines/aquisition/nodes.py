@@ -44,7 +44,19 @@ def get_selenium_driver():
     
 
 
-def westmetall_download(page_url = 'https://www.westmetall.com/en/markdaten.php?action=table&field=LME_Al_cash'):
+def westmetall_download(page_url = 'https://www.westmetall.com/en/markdaten.php?action=table&field=LME_Al_cash',
+                        all=False):
+    """_summary_
+
+    NOTE: This function can be used to get whole dataset from the url (data are set statically in the html).
+    
+    Args:
+        page_url (str, optional): _description_. Defaults to 'https://www.westmetall.com/en/markdaten.php?action=table&field=LME_Al_cash'.
+        all (bool, optional): _description_. Defaults to False.
+
+    Returns:
+        _type_: _description_
+    """
     driver = get_selenium_driver()
     driver.get(page_url)
 
@@ -59,7 +71,7 @@ def westmetall_download(page_url = 'https://www.westmetall.com/en/markdaten.php?
                 continue
             cnt += 1
     
-    dates     = np.empty(cnt, dtype=datetime.datetime)
+    dates     = np.empty(cnt, dtype=datetime.date)
     lme_cash  = np.empty(cnt, dtype=np.float64)
     lme_3m    = np.empty(cnt, dtype=np.float64)
     lme_stock = np.empty(cnt, dtype=np.float64)
@@ -74,7 +86,7 @@ def westmetall_download(page_url = 'https://www.westmetall.com/en/markdaten.php?
             day   = int(words[0][:-1])
             month = month_dict[words[1]]
             year  = int(words[2])
-            date  = datetime.datetime(year, month, day)
+            date  = datetime.date(year, month, day)
             
             try:
                 value_cash  = float( words[3].replace(',','') )
@@ -97,13 +109,36 @@ def westmetall_download(page_url = 'https://www.westmetall.com/en/markdaten.php?
             lme_3m[cnt]    = value_3m
             lme_stock[cnt] = value_stock
             cnt += 1
-        #
+        if all is False:
+            break
     #
     
-    return pd.DataFrame({ 'Date'      : dates,
-                          'LME cash'  : lme_cash,
-                          'LME 3m'    : lme_3m,
-                          'LME Stock' : lme_stock })
+    return pd.DataFrame({ 'Date'      : dates[:cnt],
+                          'LME cash'  : lme_cash[:cnt],
+                          'LME 3m'    : lme_3m[:cnt],
+                          'LME Stock' : lme_stock[:cnt] })
+
+def westmetall_actualize(dataset, update):
+    # convert to proper datetime object
+    dataset['Date'] = dataset['Date'].apply(lambda x: datetime.date( *map(int,x.split('-')) ))
+        
+    if type(dataset['Date'][0]) != type(update['Date'][0]):
+        print( type(dataset['Date'][0]) )
+        print( type(update['Date'][0]) )
+        raise ValueError
+    
+    new_dataset = pd.concat([dataset, update])
+    new_dataset = new_dataset.sort_values('Date')
+    new_dataset = new_dataset.drop_duplicates()
+    
+    print()
+    print(100*'-')
+    print()
+    print(new_dataset.head(40))
+    print(new_dataset.tail(40))
+    print()
+    return new_dataset
+
 
 
 def metalsapi_download():
@@ -113,6 +148,16 @@ def metalsapi_download():
 
 
 def investing_download(page_url='https://www.investing.com/commodities/aluminum-historical-data'):
+    """_summary_
+
+    NOTE: This function cannot be used to download whole dataset from the url.
+    
+    Args:
+        page_url (str, optional): _description_. Defaults to 'https://www.investing.com/commodities/aluminum-historical-data'.
+
+    Returns:
+        _type_: _description_
+    """
     driver = get_selenium_driver()
     driver.get(page_url)
 
@@ -144,7 +189,7 @@ def investing_download(page_url='https://www.investing.com/commodities/aluminum-
                 lme_low[cnt]  = float(split[4])
                 lme_vol[cnt]  = float(split[5])
                 cnt += 1
-            
+    
     return pd.DataFrame({ 'Date'      : dates[:cnt],
                           'LME cash'  : lme[:cnt],
                           'LME open'  : lme_open[:cnt],
@@ -154,8 +199,26 @@ def investing_download(page_url='https://www.investing.com/commodities/aluminum-
 
 
 def investing_actualize(dataset, update):
+    # convert to proper datetime object
+    dataset['Date'] = dataset['Date'].apply(lambda x: datetime.date( *map(int,x.split('-')) ))
+    
     
     print(dataset.head())
-    print(type(dataset))
+    print(update.head())
     
-    return dataset
+    print( type(dataset['Date'][0]) )
+    print( type(update['Date'][0]) )
+    
+    print()
+    print(100*'-')
+    print()
+    
+    new_dataset = pd.concat([dataset, update])
+    new_dataset = new_dataset.sort_values('Date')
+    new_dataset = new_dataset.drop_duplicates()
+    print(new_dataset)
+    #
+    #print(new_dataset.head())
+    print(new_dataset.tail(40))
+    
+    return new_dataset

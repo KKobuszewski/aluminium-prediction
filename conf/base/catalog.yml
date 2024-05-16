@@ -44,13 +44,29 @@ westmetall_dataset:
   filepath: data/01_raw/westmetall_dataset.csv
   load_args:
     sep: ";"
+  save_args:
+    sep: ";"
+    index: False
 
+# https://stackoverflow.com/questions/74350734/kedro-how-to-update-a-dataset-in-a-kedro-pipeline-given-that-a-dataset-cannot
+# new 'handle' to same place on disk
+westmetall_dataset_updated:
+  type: pandas.CSVDataset
+  filepath: data/01_raw/westmetall_dataset.csv
+  load_args:
+    sep: ";"
+  save_args:
+    sep: ";"
+    index: False
 
 investing_dataset:
   type: pandas.CSVDataset
   filepath: 'data/01_raw/investing_dataset.csv'
   load_args:
     sep: ";"
+  save_args:
+    sep: ";"
+    index: False
 
 # https://stackoverflow.com/questions/74350734/kedro-how-to-update-a-dataset-in-a-kedro-pipeline-given-that-a-dataset-cannot
 # new 'handle' to same place on disk
@@ -59,3 +75,6 @@ investing_dataset_updated:
   filepath: 'data/01_raw/investing_dataset.csv'
   load_args:
     sep: ";"
+  save_args:
+    sep: ";"
+    index: False
