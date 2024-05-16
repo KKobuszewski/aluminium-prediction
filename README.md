@@ -22,7 +22,7 @@ This pipeline is located at [/src/aluminium_prediction/pipelines/aquisition](htt
 
 Aquisition pipeline collects data scraping them from websites or utilizing certain APIs.
 
-Datasets for aluminium[^alu] are collected from:
+Datasets for aluminium[^1] are collected from:
 
 * [www.investing.com/](https://www.investing.com/commodities/aluminum-historical-data)
 
@@ -33,7 +33,7 @@ Datasets for aluminium[^alu] are collected from:
 * [finance.yahoo.com](https://finance.yahoo.com)
 
 
-[^alu] : In the beginig I am going to focus on [LME cash price](https://www.lme.com/en/Metals/Non-ferrous/LME-Aluminium#Summary), probably 1-,2-,3- month contracts can be considered in the future.
+[^1]: In the beginig I am going to focus on [LME cash price](https://www.lme.com/en/Metals/Non-ferrous/LME-Aluminium#Summary), probably 1-,2-,3- month contracts can be considered in the future.
 
 
 ## Potential issues
