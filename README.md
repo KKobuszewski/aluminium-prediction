@@ -22,7 +22,7 @@ This pipeline is located at [/src/aluminium_prediction/pipelines/aquisition](htt
 
 Aquisition pipeline collects data scraping them from websites or utilizing certain APIs.
 
-Dataset for aluminium (LME cash) are collected from:
+Datasets for aluminium[^alu] are collected from:
 
 * [www.investing.com/](https://www.investing.com/commodities/aluminum-historical-data)
 
@@ -33,10 +33,14 @@ Dataset for aluminium (LME cash) are collected from:
 * [finance.yahoo.com](https://finance.yahoo.com)
 
 
+[^alu] : In the beginig I am going to focus on [LME cash price](https://www.lme.com/en/Metals/Non-ferrous/LME-Aluminium#Summary), probably 1-,2-,3- month contracts can be considered in the future.
+
 
 ## Potential issues
 
 1. Too small dataset
     * In [this article](https://medium.com/@mskmay66/transformers-vs-lstm-for-stock-price-time-series-prediction-3a26fcc1a782) LSTMs with ~200.000 nodes and transformers with ~20.000 are trained, while we can use data from 2000-4000 days.
-    * Probably more than one variable should be considered (not only aluminium prices).
-    * 
+    * Probably more than one variable should be considered (not only aluminium prices). <---- Dimensionality reduction? Autoencoder? PCA?
+    * Transformer NN demand less parameters in comparison with LSTM. Some convolution layers can also improve performance (see [here](https://medium.com/@mskmay66/deep-learning-and-stock-time-series-data-ff6a75cfddd9)).
+
+
