@@ -36,11 +36,24 @@ Datasets for aluminium[^1] are collected from:
 [^1]: In the beginig I am going to focus on [LME cash price](https://www.lme.com/en/Metals/Non-ferrous/LME-Aluminium#Summary), probably 1-,2-,3- month contracts can be considered in the future.
 
 
+USD/EUR 
+
+Indicators of consumption???
+
+Indicators of trade???
+
+
+### Transfer entropy
+
+https://www.kaggle.com/code/singh2299/transfer-entropy-causal
+
+
 ## Potential issues
 
 1. Too small dataset
-    * In [this article](https://medium.com/@mskmay66/transformers-vs-lstm-for-stock-price-time-series-prediction-3a26fcc1a782) LSTMs with ~200.000 nodes and transformers with ~20.000 are trained, while we can use data from 2000-4000 days.
-    * Probably more than one variable should be considered (not only aluminium prices). <---- Dimensionality reduction? Autoencoder? PCA?
+    * In [this article](https://medium.com/@mskmay66/transformers-vs-lstm-for-stock-price-time-series-prediction-3a26fcc1a782) LSTMs with ~200.000 parameters and transformers with ~20.000 parameters are trained, while we can use data from 2000-4000 days.
+    * Probably more than one variable should be considered (not only aluminium prices). <---- Dimensionality reduction? Autoencoder? PCA? [Granger Causality Test](https://en.wikipedia.org/wiki/Granger_causality)? [**Transfer Entropy**](https://en.wikipedia.org/wiki/Transfer_entropy)?
     * Transformer NN demand less parameters in comparison with LSTM. Some convolution layers can also improve performance (see [here](https://medium.com/@mskmay66/deep-learning-and-stock-time-series-data-ff6a75cfddd9)).
+    * As we can have data from different sources (which sligthly differ) we can produce multiple different time series
 
 
