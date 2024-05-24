@@ -57,3 +57,8 @@ Indicators of trade???
     * As we can have data from different sources (which sligthly differ) we can produce multiple different time series
 
 
+## Neural networks
+
+https://medium.com/@srmousavi25/how-to-fix-a-common-mistake-in-lstm-time-series-forecasting-4d4d51d9948f
+
+
