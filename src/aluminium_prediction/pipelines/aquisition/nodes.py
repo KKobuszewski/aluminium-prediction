@@ -41,7 +41,10 @@ def get_selenium_driver():
     driver = webdriver.Chrome(service=ChromeService( ChromeDriverManager().install() ),
                               options=options) 
     return driver
-    
+
+
+def convert_to_datetime(column):
+    return column.apply(lambda x: datetime.date( *map(int,x.split('-')) ))
 
 
 def westmetall_download(page_url = 'https://www.westmetall.com/en/markdaten.php?action=table&field=LME_Al_cash',
@@ -120,8 +123,9 @@ def westmetall_download(page_url = 'https://www.westmetall.com/en/markdaten.php?
 
 def westmetall_actualize(dataset, update):
     # convert to proper datetime object
-    dataset['Date'] = dataset['Date'].apply(lambda x: datetime.date( *map(int,x.split('-')) ))
-        
+    #dataset['Date'] = dataset['Date'].apply(lambda x: datetime.date( *map(int,x.split('-')) ))
+    dataset['Date'] = convert_to_datetime(dataset['Date'])
+           
     if type(dataset['Date'][0]) != type(update['Date'][0]):
         print( type(dataset['Date'][0]) )
         print( type(update['Date'][0]) )
@@ -200,7 +204,8 @@ def investing_download(page_url='https://www.investing.com/commodities/aluminum-
 
 def investing_actualize(dataset, update):
     # convert to proper datetime object
-    dataset['Date'] = dataset['Date'].apply(lambda x: datetime.date( *map(int,x.split('-')) ))
+    #dataset['Date'] = dataset['Date'].apply(lambda x: datetime.date( *map(int,x.split('-')) ))
+    dataset['Date'] = convert_to_datetime(dataset['Date'])
     
     
     print(dataset.head())
@@ -222,3 +227,37 @@ def investing_actualize(dataset, update):
     print(new_dataset.tail(40))
     
     return new_dataset
+
+
+def visualize_aluminium_datasets(westmetall_dataset, investing_dataset):
+    westmetall_dataset['Date'] = convert_to_datetime(westmetall_dataset['Date'])
+    investing_dataset['Date'] = convert_to_datetime(investing_dataset['Date'])
+    
+    fig, axes = plt.subplots(ncols=1, nrows=2, sharex=True, figsize=[16.,10.])
+    ax1, ax2 = axes.ravel()
+    
+    # LME price plot
+    ax1.grid(True)
+    ax1.xaxis.set_major_locator(matplotlib.dates.YearLocator())
+    ax1.xaxis.set_minor_locator(matplotlib.dates.MonthLocator())
+    ax1.scatter(investing_dataset['Date'], investing_dataset['LME cash'], color='k', s=0.5, alpha=0.75, label='investing.com')
+    ax1.scatter(investing_dataset['Date'], investing_dataset['LME open'], color='k', s=0.5, alpha=0.5)
+    ax1.scatter(investing_dataset['Date'], investing_dataset['LME high'], color='k', s=0.5, alpha=0.5)
+    ax1.scatter(investing_dataset['Date'], investing_dataset['LME low'], color='k', s=0.5, alpha=0.5)
+    
+    ax1.scatter(westmetall_dataset['Date'], westmetall_dataset['LME cash'], color='r', s=0.5, alpha=0.75, label='westmetall.com')
+    ax1.legend()
+    
+    
+    # LME Volume plot
+    ax2.grid(True)
+    ax2.xaxis.set_major_locator(matplotlib.dates.YearLocator())
+    ax2.xaxis.set_minor_locator(matplotlib.dates.MonthLocator())
+    ax2.scatter(investing_dataset['Date'], investing_dataset['LME vol'], color='k', s=0.5, label='investing.com volume)
+    ax2.scatter(westmetall_dataset['Date'], westmetall_dataset['LME Stock']/10000.0, color='r', s=0.5, label='westmetall.com stock')
+    ax2.legend()
+    
+    fig.tight_layout()
+    
+    return fig
+    

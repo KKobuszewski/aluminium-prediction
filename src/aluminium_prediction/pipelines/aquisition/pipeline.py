@@ -5,11 +5,13 @@ generated using Kedro 0.19.3
 
 from kedro.pipeline import Pipeline, pipeline, node
 from aluminium_prediction.pipelines.aquisition.nodes import (westmetall_download, westmetall_actualize, 
-                                                             investing_download, investing_actualize)
+                                                             investing_download, investing_actualize,
+                                                             visualize_aluminium_datasets)
 
 
 """
 poetry run kedro run --from-nodes "investing_download_node"
+poetry run kedro run --from-nodes "visualize_aluminium_node"
 """
 
 def create_pipeline(**kwargs) -> Pipeline:
@@ -38,6 +40,12 @@ def create_pipeline(**kwargs) -> Pipeline:
                 inputs=["investing_dataset","investing_download"],
                 outputs="investing_dataset_updated",
                 name="investing_actualize_node",
+            ),
+            node(
+                visualize_aluminium_datasets,
+                inputs=["westmetall_dataset_updated","investing_dataset_updated"],
+                outputs="aluminium_LME_plot",
+                name="visualize_aluminium_node",
             ),
         ]
     )
