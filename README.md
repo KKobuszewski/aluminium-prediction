@@ -35,18 +35,45 @@ Datasets for **aluminium prices**[^1] are collected from:
 
 [^1]: In the beginig I am going to focus on [LME cash price](https://www.lme.com/en/Metals/Non-ferrous/LME-Aluminium#Summary), probably 1-,2-,3- month contracts can be considered in the future.
 
+<br>
+
 **Aluminium production**
 
 https://international-aluminium.org/statistics/primary-aluminium-production/
 
-USD/EUR 
+<br>
 
-Indicators of consumption???
+**Indicators of consumption**
 
-Indicators of trade???
+* GDP???
 
+
+**Indicators of market uncertainity**
+
+https://fred.stlouisfed.org/series/GEPUCURRENT
+
+http://www.policyuncertainty.com/financial_stress.html
+
+
+<br>
+
+**Indicators of trade???**
+
+<br>
+
+**USD/EUR ???**
+
+<br>
 
 ### Transfer entropy
+
+See
+
+https://code.google.com/archive/p/transfer-entropy-toolbox/source/default/source
+
+https://github.com/majianthu/transferentropy
+
+
 
 ## Potential issues
 

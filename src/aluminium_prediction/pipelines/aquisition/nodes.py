@@ -253,7 +253,7 @@ def visualize_aluminium_datasets(westmetall_dataset, investing_dataset):
     ax2.grid(True)
     ax2.xaxis.set_major_locator(matplotlib.dates.YearLocator())
     ax2.xaxis.set_minor_locator(matplotlib.dates.MonthLocator())
-    ax2.scatter(investing_dataset['Date'], investing_dataset['LME vol'], color='k', s=0.5, label='investing.com volume)
+    ax2.scatter(investing_dataset['Date'], investing_dataset['LME vol'], color='k', s=0.5, label='investing.com volume')
     ax2.scatter(westmetall_dataset['Date'], westmetall_dataset['LME Stock']/10000.0, color='r', s=0.5, label='westmetall.com stock')
     ax2.legend()
     
