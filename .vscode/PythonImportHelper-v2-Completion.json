@@ -1,5 +1,23 @@
 [
     {
+        "label": "pandas",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pandas",
+        "description": "pandas",
+        "detail": "pandas",
+        "documentation": {}
+    },
+    {
+        "label": "requests",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "requests",
+        "description": "requests",
+        "detail": "requests",
+        "documentation": {}
+    },
+    {
         "label": "BeautifulSoup",
         "importPath": "bs4",
         "description": "bs4",
@@ -58,12 +76,21 @@
         "documentation": {}
     },
     {
-        "label": "pandas",
+        "label": "matplotlib.pyplot",
         "kind": 6,
         "isExtraImport": true,
-        "importPath": "pandas",
-        "description": "pandas",
-        "detail": "pandas",
+        "importPath": "matplotlib.pyplot",
+        "description": "matplotlib.pyplot",
+        "detail": "matplotlib.pyplot",
+        "documentation": {}
+    },
+    {
+        "label": "matplotlib.dates",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "matplotlib.dates",
+        "description": "matplotlib.dates",
+        "detail": "matplotlib.dates",
         "documentation": {}
     },
     {
@@ -120,6 +147,144 @@
         "description": "aluminium_prediction.pipelines.aquisition.nodes",
         "isExtraImport": true,
         "detail": "aluminium_prediction.pipelines.aquisition.nodes",
+        "documentation": {}
+    },
+    {
+        "label": "westmetall_actualize",
+        "importPath": "aluminium_prediction.pipelines.aquisition.nodes",
+        "description": "aluminium_prediction.pipelines.aquisition.nodes",
+        "isExtraImport": true,
+        "detail": "aluminium_prediction.pipelines.aquisition.nodes",
+        "documentation": {}
+    },
+    {
+        "label": "investing_download",
+        "importPath": "aluminium_prediction.pipelines.aquisition.nodes",
+        "description": "aluminium_prediction.pipelines.aquisition.nodes",
+        "isExtraImport": true,
+        "detail": "aluminium_prediction.pipelines.aquisition.nodes",
+        "documentation": {}
+    },
+    {
+        "label": "investing_actualize",
+        "importPath": "aluminium_prediction.pipelines.aquisition.nodes",
+        "description": "aluminium_prediction.pipelines.aquisition.nodes",
+        "isExtraImport": true,
+        "detail": "aluminium_prediction.pipelines.aquisition.nodes",
+        "documentation": {}
+    },
+    {
+        "label": "visualize_aluminium_datasets",
+        "importPath": "aluminium_prediction.pipelines.aquisition.nodes",
+        "description": "aluminium_prediction.pipelines.aquisition.nodes",
+        "isExtraImport": true,
+        "detail": "aluminium_prediction.pipelines.aquisition.nodes",
+        "documentation": {}
+    },
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "warnings",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "warnings",
+        "description": "warnings",
+        "detail": "warnings",
+        "documentation": {}
+    },
+    {
+        "label": "scipy.signal",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "scipy.signal",
+        "description": "scipy.signal",
+        "detail": "scipy.signal",
+        "documentation": {}
+    },
+    {
+        "label": "statsmodels",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "statsmodels",
+        "description": "statsmodels",
+        "detail": "statsmodels",
+        "documentation": {}
+    },
+    {
+        "label": "statsmodels.tsa",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "statsmodels.tsa",
+        "description": "statsmodels.tsa",
+        "detail": "statsmodels.tsa",
+        "documentation": {}
+    },
+    {
+        "label": "statsmodels.tsa.stattools",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "statsmodels.tsa.stattools",
+        "description": "statsmodels.tsa.stattools",
+        "detail": "statsmodels.tsa.stattools",
+        "documentation": {}
+    },
+    {
+        "label": "statsmodels.tools",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "statsmodels.tools",
+        "description": "statsmodels.tools",
+        "detail": "statsmodels.tools",
+        "documentation": {}
+    },
+    {
+        "label": "InterpolationWarning",
+        "importPath": "statsmodels.tools.sm_exceptions",
+        "description": "statsmodels.tools.sm_exceptions",
+        "isExtraImport": true,
+        "detail": "statsmodels.tools.sm_exceptions",
+        "documentation": {}
+    },
+    {
+        "label": "InterpolationWarning",
+        "importPath": "statsmodels.tools.sm_exceptions",
+        "description": "statsmodels.tools.sm_exceptions",
+        "isExtraImport": true,
+        "detail": "statsmodels.tools.sm_exceptions",
+        "documentation": {}
+    },
+    {
+        "label": "emd",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "emd",
+        "description": "emd",
+        "detail": "emd",
+        "documentation": {}
+    },
+    {
+        "label": "copent",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "copent",
+        "description": "copent",
+        "detail": "copent",
+        "documentation": {}
+    },
+    {
+        "label": "aluminium_prediction.stationarity",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "aluminium_prediction.stationarity",
+        "description": "aluminium_prediction.stationarity",
+        "detail": "aluminium_prediction.stationarity",
         "documentation": {}
     },
     {
@@ -253,11 +418,29 @@
         "documentation": {}
     },
     {
+        "label": "df",
+        "kind": 5,
+        "importPath": "data.01_raw.show_dataframe",
+        "description": "data.01_raw.show_dataframe",
+        "peekOfCode": "df = pd.read_csv('westmetall_dataset.csv',sep=';')\n# Convert entire data frame as string and print\nprint(df.to_string())",
+        "detail": "data.01_raw.show_dataframe",
+        "documentation": {}
+    },
+    {
         "label": "get_selenium_driver",
         "kind": 2,
         "importPath": "src.aluminium_prediction.pipelines.aquisition.nodes",
         "description": "src.aluminium_prediction.pipelines.aquisition.nodes",
-        "peekOfCode": "def get_selenium_driver():\n    options = webdriver.ChromeOptions()\n    options.add_argument(\"--headless=new\") # run browser in headless mode\n    driver = webdriver.Chrome(service=ChromeService( ChromeDriverManager().install() ),\n                              options=options) \n    return driver\ndef westmetall_download(page_url = 'https://www.westmetall.com/en/markdaten.php?action=table&field=LME_Al_cash'):\n    driver = get_selenium_driver()\n    driver.get(page_url)\n    # find tbody of table to be parsed",
+        "peekOfCode": "def get_selenium_driver():\n    options = webdriver.ChromeOptions()\n    options.add_argument(\"--headless=new\") # run browser in headless mode\n    driver = webdriver.Chrome(service=ChromeService( ChromeDriverManager().install() ),\n                              options=options) \n    return driver\ndef convert_to_datetime(column):\n    return column.apply(lambda x: datetime.date( *map(int,x.split('-')) ))\ndef westmetall_download(page_url = 'https://www.westmetall.com/en/markdaten.php?action=table&field=LME_Al_cash',\n                        all=False):",
+        "detail": "src.aluminium_prediction.pipelines.aquisition.nodes",
+        "documentation": {}
+    },
+    {
+        "label": "convert_to_datetime",
+        "kind": 2,
+        "importPath": "src.aluminium_prediction.pipelines.aquisition.nodes",
+        "description": "src.aluminium_prediction.pipelines.aquisition.nodes",
+        "peekOfCode": "def convert_to_datetime(column):\n    return column.apply(lambda x: datetime.date( *map(int,x.split('-')) ))\ndef westmetall_download(page_url = 'https://www.westmetall.com/en/markdaten.php?action=table&field=LME_Al_cash',\n                        all=False):\n    \"\"\"_summary_\n    NOTE: This function can be used to get whole dataset from the url (data are set statically in the html).\n    Args:\n        page_url (str, optional): _description_. Defaults to 'https://www.westmetall.com/en/markdaten.php?action=table&field=LME_Al_cash'.\n        all (bool, optional): _description_. Defaults to False.\n    Returns:",
         "detail": "src.aluminium_prediction.pipelines.aquisition.nodes",
         "documentation": {}
     },
@@ -266,7 +449,52 @@
         "kind": 2,
         "importPath": "src.aluminium_prediction.pipelines.aquisition.nodes",
         "description": "src.aluminium_prediction.pipelines.aquisition.nodes",
-        "peekOfCode": "def westmetall_download(page_url = 'https://www.westmetall.com/en/markdaten.php?action=table&field=LME_Al_cash'):\n    driver = get_selenium_driver()\n    driver.get(page_url)\n    # find tbody of table to be parsed\n    elements = driver.find_elements(By.TAG_NAME, 'tbody')\n    # count number of elements containing data\n    cnt = 0\n    for elem in elements:\n        for line in elem.text.split('\\n'):\n            if ('LME' in line):",
+        "peekOfCode": "def westmetall_download(page_url = 'https://www.westmetall.com/en/markdaten.php?action=table&field=LME_Al_cash',\n                        all=False):\n    \"\"\"_summary_\n    NOTE: This function can be used to get whole dataset from the url (data are set statically in the html).\n    Args:\n        page_url (str, optional): _description_. Defaults to 'https://www.westmetall.com/en/markdaten.php?action=table&field=LME_Al_cash'.\n        all (bool, optional): _description_. Defaults to False.\n    Returns:\n        _type_: _description_\n    \"\"\"",
+        "detail": "src.aluminium_prediction.pipelines.aquisition.nodes",
+        "documentation": {}
+    },
+    {
+        "label": "westmetall_actualize",
+        "kind": 2,
+        "importPath": "src.aluminium_prediction.pipelines.aquisition.nodes",
+        "description": "src.aluminium_prediction.pipelines.aquisition.nodes",
+        "peekOfCode": "def westmetall_actualize(dataset, update):\n    # convert to proper datetime object\n    #dataset['Date'] = dataset['Date'].apply(lambda x: datetime.date( *map(int,x.split('-')) ))\n    dataset['Date'] = convert_to_datetime(dataset['Date'])\n    if type(dataset['Date'][0]) != type(update['Date'][0]):\n        print( type(dataset['Date'][0]) )\n        print( type(update['Date'][0]) )\n        raise ValueError\n    new_dataset = pd.concat([dataset, update])\n    new_dataset = new_dataset.sort_values('Date')",
+        "detail": "src.aluminium_prediction.pipelines.aquisition.nodes",
+        "documentation": {}
+    },
+    {
+        "label": "metalsapi_download",
+        "kind": 2,
+        "importPath": "src.aluminium_prediction.pipelines.aquisition.nodes",
+        "description": "src.aluminium_prediction.pipelines.aquisition.nodes",
+        "peekOfCode": "def metalsapi_download():\n    # TODO\n    return None\ndef investing_download(page_url='https://www.investing.com/commodities/aluminum-historical-data'):\n    \"\"\"_summary_\n    NOTE: This function cannot be used to download whole dataset from the url.\n    Args:\n        page_url (str, optional): _description_. Defaults to 'https://www.investing.com/commodities/aluminum-historical-data'.\n    Returns:\n        _type_: _description_",
+        "detail": "src.aluminium_prediction.pipelines.aquisition.nodes",
+        "documentation": {}
+    },
+    {
+        "label": "investing_download",
+        "kind": 2,
+        "importPath": "src.aluminium_prediction.pipelines.aquisition.nodes",
+        "description": "src.aluminium_prediction.pipelines.aquisition.nodes",
+        "peekOfCode": "def investing_download(page_url='https://www.investing.com/commodities/aluminum-historical-data'):\n    \"\"\"_summary_\n    NOTE: This function cannot be used to download whole dataset from the url.\n    Args:\n        page_url (str, optional): _description_. Defaults to 'https://www.investing.com/commodities/aluminum-historical-data'.\n    Returns:\n        _type_: _description_\n    \"\"\"\n    driver = get_selenium_driver()\n    driver.get(page_url)",
+        "detail": "src.aluminium_prediction.pipelines.aquisition.nodes",
+        "documentation": {}
+    },
+    {
+        "label": "investing_actualize",
+        "kind": 2,
+        "importPath": "src.aluminium_prediction.pipelines.aquisition.nodes",
+        "description": "src.aluminium_prediction.pipelines.aquisition.nodes",
+        "peekOfCode": "def investing_actualize(dataset, update):\n    # convert to proper datetime object\n    #dataset['Date'] = dataset['Date'].apply(lambda x: datetime.date( *map(int,x.split('-')) ))\n    dataset['Date'] = convert_to_datetime(dataset['Date'])\n    print(dataset.head())\n    print(update.head())\n    print( type(dataset['Date'][0]) )\n    print( type(update['Date'][0]) )\n    print()\n    print(100*'-')",
+        "detail": "src.aluminium_prediction.pipelines.aquisition.nodes",
+        "documentation": {}
+    },
+    {
+        "label": "visualize_aluminium_datasets",
+        "kind": 2,
+        "importPath": "src.aluminium_prediction.pipelines.aquisition.nodes",
+        "description": "src.aluminium_prediction.pipelines.aquisition.nodes",
+        "peekOfCode": "def visualize_aluminium_datasets(westmetall_dataset, investing_dataset):\n    westmetall_dataset['Date'] = convert_to_datetime(westmetall_dataset['Date'])\n    investing_dataset['Date'] = convert_to_datetime(investing_dataset['Date'])\n    fig, axes = plt.subplots(ncols=1, nrows=2, sharex=True, figsize=[16.,10.])\n    ax1, ax2 = axes.ravel()\n    # LME price plot\n    ax1.grid(True)\n    ax1.xaxis.set_major_locator(matplotlib.dates.YearLocator())\n    ax1.xaxis.set_minor_locator(matplotlib.dates.MonthLocator())\n    ax1.scatter(investing_dataset['Date'], investing_dataset['LME cash'], color='k', s=0.5, alpha=0.75, label='investing.com')",
         "detail": "src.aluminium_prediction.pipelines.aquisition.nodes",
         "documentation": {}
     },
@@ -284,8 +512,35 @@
         "kind": 2,
         "importPath": "src.aluminium_prediction.pipelines.aquisition.pipeline",
         "description": "src.aluminium_prediction.pipelines.aquisition.pipeline",
-        "peekOfCode": "def create_pipeline(**kwargs) -> Pipeline:\n    return pipeline(\n        [\n            node(\n                westmetall_download,\n                inputs=None,\n                outputs=\"westmetall_dataset\",\n                name=\"westmetall_download_node\",\n            ),\n        ]",
+        "peekOfCode": "def create_pipeline(**kwargs) -> Pipeline:\n    return pipeline(\n        [\n            node(\n                westmetall_download,\n                inputs=None,\n                outputs=\"westmetall_download\",\n                name=\"westmetall_download_node\",\n            ),\n            node(",
         "detail": "src.aluminium_prediction.pipelines.aquisition.pipeline",
+        "documentation": {}
+    },
+    {
+        "label": "cross_correlation",
+        "kind": 2,
+        "importPath": "src.aluminium_prediction.causality",
+        "description": "src.aluminium_prediction.causality",
+        "peekOfCode": "def cross_correlation(p, q, stationarize=False):\n    \"\"\"\n    source: https://www.datainsightonline.com/post/cross-correlation-with-two-time-series-in-python#google_vignette\n    \"\"\"\n    if stationarize is True:\n        p = aluminium_prediction.stationarity.remove_residual_emd(p, n=1)\n        q = aluminium_prediction.stationarity.remove_residual_emd(q, n=1)\n    p = (p - np.mean(p)) / (np.std(p) * len(p))\n    q = (q - np.mean(q)) / (np.std(q))  \n    lags = scipy.signal.correlation_lags(len(p), len(q))",
+        "detail": "src.aluminium_prediction.causality",
+        "documentation": {}
+    },
+    {
+        "label": "cross_correlation_plot",
+        "kind": 2,
+        "importPath": "src.aluminium_prediction.causality",
+        "description": "src.aluminium_prediction.causality",
+        "peekOfCode": "def cross_correlation_plot(lags, ccf_values, title='', show=True, fig=None, ax=None):\n    \"\"\"\n    source: https://www.datainsightonline.com/post/cross-correlation-with-two-time-series-in-python#google_vignette\n    \"\"\"\n    if (fig is None) or (ax is None):\n        fig, ax = plt.subplots(figsize=(9, 6))\n    ax.plot(lags, ccf_values)\n    ax.axhline(-2/np.sqrt(23), color='red', label='5% confidence interval')\n    ax.axhline(2/np.sqrt(23), color='red')\n    ax.axvline(x = 0, color = 'black', lw = 1)",
+        "detail": "src.aluminium_prediction.causality",
+        "documentation": {}
+    },
+    {
+        "label": "transfer_entropy",
+        "kind": 2,
+        "importPath": "src.aluminium_prediction.causality",
+        "description": "src.aluminium_prediction.causality",
+        "peekOfCode": "def transfer_entropy(p, q, nlags=30, stationarize=False):\n    \"\"\"_summary_\n    Args:\n        p (_type_): _description_\n        q (_type_): _description_\n        nlags (int, optional): _description_. Defaults to 30.\n        stationarize (bool, optional): _description_. Defaults to False.\n    Returns:\n        _type_: _description_\n    source: https://www.kaggle.com/code/singh2299/transfer-entropy-causal",
+        "detail": "src.aluminium_prediction.causality",
         "documentation": {}
     },
     {
@@ -331,6 +586,42 @@
         "description": "src.aluminium_prediction.settings",
         "peekOfCode": "CONFIG_LOADER_ARGS = {\n      \"base_env\": \"base\",\n      \"default_run_env\": \"local\",\n#       \"config_patterns\": {\n#           \"spark\" : [\"spark*/\"],\n#           \"parameters\": [\"parameters*\", \"parameters*/**\", \"**/parameters*\"],\n#       }\n}\n# Class that manages Kedro's library components.\n# from kedro.framework.context import KedroContext",
         "detail": "src.aluminium_prediction.settings",
+        "documentation": {}
+    },
+    {
+        "label": "adf_test",
+        "kind": 2,
+        "importPath": "src.aluminium_prediction.stationarity",
+        "description": "src.aluminium_prediction.stationarity",
+        "peekOfCode": "def adf_test(timeseries, pvalue=0.05, truefalse=True):\n  \"\"\"\n  See https://www.statsmodels.org/dev/generated/statsmodels.tsa.stattools.adfuller.html.\n  \"\"\"\n  # TODO: Add filtering of InterpolationWarning\n  test_result = statsmodels.tsa.stattools.adfuller(timeseries, autolag='AIC')\n  test_pvalue = test_result[1]\n  if truefalse is True:\n    return test_pvalue < pvalue\n  else:",
+        "detail": "src.aluminium_prediction.stationarity",
+        "documentation": {}
+    },
+    {
+        "label": "kpss_test",
+        "kind": 2,
+        "importPath": "src.aluminium_prediction.stationarity",
+        "description": "src.aluminium_prediction.stationarity",
+        "peekOfCode": "def kpss_test(timeseries, pvalue=0.05, truefalse=True):\n  with warnings.catch_warnings(record=True) as w:\n    warnings.filterwarnings(action='always',\n                            category=InterpolationWarning)\n    test_result = statsmodels.tsa.stattools.kpss(timeseries, regression=\"c\", nlags=\"auto\")\n    test_pvalue = test_result[1]\n    if   (len(w) == 1) and ('p-value is greater' in str(w[-1].message)):\n       print(str(w[-1].message))\n    elif (len(w) == 1) and ('p-value is smaller' in str(w[-1].message)):\n       pass",
+        "detail": "src.aluminium_prediction.stationarity",
+        "documentation": {}
+    },
+    {
+        "label": "stationarity_test",
+        "kind": 2,
+        "importPath": "src.aluminium_prediction.stationarity",
+        "description": "src.aluminium_prediction.stationarity",
+        "peekOfCode": "def stationarity_test(timeseries, pvalue=0.05, verbose=1):\n  adf_result = adf_test(timeseries, pvalue=pvalue, truefalse=True)\n  kpss_result = kpss_test(timeseries, pvalue=pvalue, truefalse=True)\n  if verbose > 0:\n    print('Stationarity (ADF test): ', adf_result)\n    print('Stationarity (KPSS test):', kpss_result)\n  return adf_result and kpss_result\ndef remove_residual_emd(signal, n=1):\n  imf_opts = {'sd_thresh': 0.05}\n  imfs = emd.sift.sift(signal,imf_opts=imf_opts)",
+        "detail": "src.aluminium_prediction.stationarity",
+        "documentation": {}
+    },
+    {
+        "label": "remove_residual_emd",
+        "kind": 2,
+        "importPath": "src.aluminium_prediction.stationarity",
+        "description": "src.aluminium_prediction.stationarity",
+        "peekOfCode": "def remove_residual_emd(signal, n=1):\n  imf_opts = {'sd_thresh': 0.05}\n  imfs = emd.sift.sift(signal,imf_opts=imf_opts)\n  if n > imfs.shape[1]:\n    n = imfs.shape[1]\n  return signal - imfs[:,-n:].sum(axis=1)",
+        "detail": "src.aluminium_prediction.stationarity",
         "documentation": {}
     },
     {
