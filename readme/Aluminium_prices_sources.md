@@ -29,3 +29,12 @@ As we can see below, settlement price and 3-month price on [www.westmetall.com](
 ## Comparison of LME prices with investing.com
 
 ![investing_vs_lme](https://github.com/KKobuszewski/aluminium-prediction/blob/main/readme/LME_vs_investing.png)
+
+
+Images can be added to markdown with HMTL
+```
+<p align="center">
+  <img src="your_relative_path_here" width="350" title="hover text">
+  <img src="your_relative_path_here_number_2_large_name" width="350" alt="accessibility text">
+</p>
+```
