@@ -35,6 +35,8 @@ Datasets for **aluminium prices**[^1] are collected from:
 
 [^1]: In the beginig I am going to focus on [LME cash price](https://www.lme.com/en/Metals/Non-ferrous/LME-Aluminium#Summary), probably 1-,2-,3- month contracts can be considered in the future.
 
+Also see [here to](https://github.com/KKobuszewski/aluminium-prediction/blob/main/readme/Aluminium_prices_sources.md) get more details about prices.
+
 <br>
 
 **Aluminium production**
