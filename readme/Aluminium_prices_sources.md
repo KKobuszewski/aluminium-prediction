@@ -13,9 +13,19 @@ Datasets for **aluminium prices**[^1] are collected from:
 * [finance.yahoo.com](https://finance.yahoo.com)
 
 
-[^1]: In the beginig I am going to focus on [LME cash price](https://www.lme.com/en/Metals/Non-ferrous/LME-Aluminium#Summary), probably 1-,2-,3- month contracts can be considered in the future.
+In the beginig I am going to focus on [**LME 3-month price**](https://www.lme.com/en/Metals/Non-ferrous/LME-Aluminium#Summary)  **in USD/t**.
 
+[^1]: Probably 1-,2-,3- month contracts can be considered in the future.
 
+<br>
+
+Settlement price and 3-month price on [www.westmetall.com](https://www.westmetall.com/en/markdaten.php?action=table&field=LME_Al_cash) correspond to LME official prices (for offer).
+
+<br>
+
+Price in the table on [www.investing.com/](https://www.investing.com/commodities/aluminum-historical-data) corresponds to LME 3-month closing price.
+
+I'm not sure what's the correspondence between Open/High/Low prices and LME website data... Note that 'High' price can be lower than 'Low' price.
 
 
 ## Comparison of LME prices with westmetall.com
