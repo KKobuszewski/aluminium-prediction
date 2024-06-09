@@ -53,6 +53,33 @@
         "documentation": {}
     },
     {
+        "label": "plotly.express",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "plotly.express",
+        "description": "plotly.express",
+        "detail": "plotly.express",
+        "documentation": {}
+    },
+    {
+        "label": "plotly.graph_objects",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "plotly.graph_objects",
+        "description": "plotly.graph_objects",
+        "detail": "plotly.graph_objects",
+        "documentation": {}
+    },
+    {
+        "label": "plotly.subplots",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "plotly.subplots",
+        "description": "plotly.subplots",
+        "detail": "plotly.subplots",
+        "documentation": {}
+    },
+    {
         "label": "timeutils",
         "importPath": "aluminium_prediction",
         "description": "aluminium_prediction",
@@ -150,6 +177,14 @@
     },
     {
         "label": "visualize_aluminium_datasets",
+        "importPath": "aluminium_prediction.pipelines.aquisition.nodes",
+        "description": "aluminium_prediction.pipelines.aquisition.nodes",
+        "isExtraImport": true,
+        "detail": "aluminium_prediction.pipelines.aquisition.nodes",
+        "documentation": {}
+    },
+    {
+        "label": "plotly_aluminium_datasets",
         "importPath": "aluminium_prediction.pipelines.aquisition.nodes",
         "description": "aluminium_prediction.pipelines.aquisition.nodes",
         "isExtraImport": true,
@@ -264,6 +299,30 @@
     },
     {
         "label": "Dict",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Any",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Dict",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "NoReturn",
         "importPath": "typing",
         "description": "typing",
         "isExtraImport": true,
@@ -393,6 +452,38 @@
         "documentation": {}
     },
     {
+        "label": "AbstractDataset",
+        "importPath": "kedro.io",
+        "description": "kedro.io",
+        "isExtraImport": true,
+        "detail": "kedro.io",
+        "documentation": {}
+    },
+    {
+        "label": "DataCatalog",
+        "importPath": "kedro.io",
+        "description": "kedro.io",
+        "isExtraImport": true,
+        "detail": "kedro.io",
+        "documentation": {}
+    },
+    {
+        "label": "get_filepath_str",
+        "importPath": "kedro.io.core",
+        "description": "kedro.io.core",
+        "isExtraImport": true,
+        "detail": "kedro.io.core",
+        "documentation": {}
+    },
+    {
+        "label": "DatasetError",
+        "importPath": "kedro.io.core",
+        "description": "kedro.io.core",
+        "isExtraImport": true,
+        "detail": "kedro.io.core",
+        "documentation": {}
+    },
+    {
         "label": "logging",
         "kind": 6,
         "isExtraImport": true,
@@ -408,14 +499,6 @@
         "importPath": "pytest",
         "description": "pytest",
         "detail": "pytest",
-        "documentation": {}
-    },
-    {
-        "label": "DataCatalog",
-        "importPath": "kedro.io",
-        "description": "kedro.io",
-        "isExtraImport": true,
-        "detail": "kedro.io",
         "documentation": {}
     },
     {
@@ -535,7 +618,7 @@
         "kind": 2,
         "importPath": "src.aluminium_prediction.pipelines.aquisition.nodes",
         "description": "src.aluminium_prediction.pipelines.aquisition.nodes",
-        "peekOfCode": "def investing_actualize(dataset, update):\n    # convert to proper datetime object\n    #dataset['Date'] = dataset['Date'].apply(lambda x: datetime.date( *map(int,x.split('-')) ))\n    dataset['Date'] = convert_to_datetime(dataset['Date'])\n    print(dataset.head())\n    print(update.head())\n    print( type(dataset['Date'][0]) )\n    print( type(update['Date'][0]) )\n    print()\n    print(100*'-')",
+        "peekOfCode": "def investing_actualize(dataset, update):\n    # convert to proper datetime object\n    #dataset['Date'] = dataset['Date'].apply(lambda x: datetime.date( *map(int,x.split('-')) ))\n    dataset['Date'] = timeutils.convert_to_datetime(dataset['Date'])\n    print(dataset.head())\n    print(update.head())\n    print( type(dataset['Date'][0]) )\n    print( type(update['Date'][0]) )\n    print()\n    print(100*'-')",
         "detail": "src.aluminium_prediction.pipelines.aquisition.nodes",
         "documentation": {}
     },
@@ -544,7 +627,16 @@
         "kind": 2,
         "importPath": "src.aluminium_prediction.pipelines.aquisition.nodes",
         "description": "src.aluminium_prediction.pipelines.aquisition.nodes",
-        "peekOfCode": "def visualize_aluminium_datasets(westmetall_dataset, investing_dataset):\n    westmetall_dataset['Date'] = timeutils.convert_to_datetime(westmetall_dataset['Date'])\n    investing_dataset['Date'] = timeutils.convert_to_datetime(investing_dataset['Date'])\n    fig, axes = plt.subplots(ncols=1, nrows=2, sharex=True, figsize=[16.,10.])\n    ax1, ax2 = axes.ravel()\n    # LME price plot\n    ax1.grid(True)\n    ax1.xaxis.set_major_locator(matplotlib.dates.YearLocator())\n    ax1.xaxis.set_minor_locator(matplotlib.dates.MonthLocator())\n    ax1.scatter(investing_dataset['Date'], investing_dataset['LME 3m'], color='k', s=0.5, alpha=0.75, label='investing.com')",
+        "peekOfCode": "def visualize_aluminium_datasets(westmetall_dataset, investing_dataset):\n    westmetall_dataset['Date'] = timeutils.convert_to_datetime(westmetall_dataset['Date'])\n    investing_dataset['Date'] = timeutils.convert_to_datetime(investing_dataset['Date'])\n    fig, axes = plt.subplots(ncols=1, nrows=2, sharex=True, figsize=[20.,14.])\n    ax1, ax2 = axes.ravel()\n    fig.suptitle('Aluminium LME 3-month prices')\n    # LME price plot\n    ax1.grid(True)\n    ax1.xaxis.set_major_locator(matplotlib.dates.YearLocator())\n    ax1.xaxis.set_minor_locator(matplotlib.dates.MonthLocator())",
+        "detail": "src.aluminium_prediction.pipelines.aquisition.nodes",
+        "documentation": {}
+    },
+    {
+        "label": "plotly_aluminium_datasets",
+        "kind": 2,
+        "importPath": "src.aluminium_prediction.pipelines.aquisition.nodes",
+        "description": "src.aluminium_prediction.pipelines.aquisition.nodes",
+        "peekOfCode": "def plotly_aluminium_datasets( westmetall_dataset : pd.DataFrame,\n                               investing_dataset: pd.DataFrame,\n                               metalsapi_dataset: pd.DataFrame ):\n    \"\"\"_summary_\n    ```\n    poetry run kedro run --from-nodes \"plotly_aluminium_node\"\n    ```\n    Args:\n        westmetall_dataset (pd.DataFrame): _description_\n        investing_dataset (pd.DataFrame): _description_",
         "detail": "src.aluminium_prediction.pipelines.aquisition.nodes",
         "documentation": {}
     },
@@ -717,6 +809,15 @@
         "description": "src.aluminium_prediction.timeutils",
         "peekOfCode": "month_dict = { 'January'  : 1,\n               'February' : 2,\n               'March'    : 3,\n               'April'    : 4,\n               'May'      : 5,\n               'June'     : 6,\n               'July'     : 7,\n               'August'   : 8,\n               'September': 9,\n               'October'  : 10,",
         "detail": "src.aluminium_prediction.timeutils",
+        "documentation": {}
+    },
+    {
+        "label": "PlotlyHTMLDataset",
+        "kind": 6,
+        "importPath": "src.datasets",
+        "description": "src.datasets",
+        "peekOfCode": "class PlotlyHTMLDataset(AbstractDataset):\n    def __init__(self, filepath):\n        self._filepath = filepath\n    def _load(self) -> NoReturn:\n        raise DatasetError(f\"Loading not supported for '{self.__class__.__name__}'\")\n    def _save(self, fig) -> None:\n        fname = self._filepath\n        if not '.html' in fname:\n            fname += '.html'\n        fig.write_html(fname)",
+        "detail": "src.datasets",
         "documentation": {}
     },
     {

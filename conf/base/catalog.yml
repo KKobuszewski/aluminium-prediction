@@ -68,7 +68,6 @@ investing_dataset:
     sep: ";"
     index: False
 
-# https://stackoverflow.com/questions/74350734/kedro-how-to-update-a-dataset-in-a-kedro-pipeline-given-that-a-dataset-cannot
 # new 'handle' to same place on disk
 investing_dataset_updated:
   type: pandas.CSVDataset
@@ -79,6 +78,24 @@ investing_dataset_updated:
     sep: ";"
     index: False
 
+metalsapi_dataset:
+  type: pandas.CSVDataset
+  filepath: 'data/01_raw/metalsapi_dataset.csv'
+  load_args:
+    sep: ";"
+  save_args:
+    sep: ";"
+    index: False
+
+# new 'handle' to same place on disk
+metalsapi_dataset_updated:
+  type: pandas.CSVDataset
+  filepath: 'data/01_raw/metalsapi_dataset.csv'
+  load_args:
+    sep: ";"
+  save_args:
+    sep: ";"
+    index: False
 
 
   
@@ -88,3 +105,10 @@ aluminium_LME_plot:
   save_args:
     format: png
     #dpi: 150
+
+
+datasets_comparison_plot:
+  #type: aluminium_prediction.datasets.datasets.PlotlyHTMLDataset
+  type: datasets.PlotlyHTMLDataset
+  #type: PlotlyHTMLDataset
+  filepath: 'data/08_reporting/datasets_comparison_plot.html'

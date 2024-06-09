@@ -12,6 +12,10 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import matplotlib.dates
 
+import plotly.express as px
+import plotly.graph_objects as go
+import plotly.subplots
+
 #import yfinance as yf
 
 from aluminium_prediction import timeutils, scrapping
@@ -204,7 +208,7 @@ def investing_download(page_url='https://www.investing.com/commodities/aluminum-
 def investing_actualize(dataset, update):
     # convert to proper datetime object
     #dataset['Date'] = dataset['Date'].apply(lambda x: datetime.date( *map(int,x.split('-')) ))
-    dataset['Date'] = convert_to_datetime(dataset['Date'])
+    dataset['Date'] = timeutils.convert_to_datetime(dataset['Date'])
     
     
     print(dataset.head())
@@ -232,8 +236,9 @@ def visualize_aluminium_datasets(westmetall_dataset, investing_dataset):
     westmetall_dataset['Date'] = timeutils.convert_to_datetime(westmetall_dataset['Date'])
     investing_dataset['Date'] = timeutils.convert_to_datetime(investing_dataset['Date'])
     
-    fig, axes = plt.subplots(ncols=1, nrows=2, sharex=True, figsize=[16.,10.])
+    fig, axes = plt.subplots(ncols=1, nrows=2, sharex=True, figsize=[20.,14.])
     ax1, ax2 = axes.ravel()
+    fig.suptitle('Aluminium LME 3-month prices')
     
     # LME price plot
     ax1.grid(True)
@@ -259,4 +264,81 @@ def visualize_aluminium_datasets(westmetall_dataset, investing_dataset):
     fig.tight_layout()
     
     return fig
+ 
+
+def plotly_aluminium_datasets( westmetall_dataset : pd.DataFrame,
+                               investing_dataset: pd.DataFrame,
+                               metalsapi_dataset: pd.DataFrame ):
+    """_summary_
+
+    ```
+    poetry run kedro run --from-nodes "plotly_aluminium_node"
+    ```
     
+    Args:
+        westmetall_dataset (pd.DataFrame): _description_
+        investing_dataset (pd.DataFrame): _description_
+        metalsapi_dataset (pd.DataFrame): _description_
+
+    Returns:
+        _type_: _description_
+    """
+    westmetall_dataset['Date'] = timeutils.convert_to_datetime(westmetall_dataset['Date'])
+    investing_dataset['Date']  = timeutils.convert_to_datetime(investing_dataset['Date'])
+    metalsapi_dataset['Date']  = timeutils.convert_to_datetime(metalsapi_dataset['Date'])
+    
+    fig = plotly.subplots.make_subplots(
+        rows=3, cols=1,
+        shared_xaxes=True,
+        vertical_spacing=0.03,
+        specs=[[{"type": "table"}],
+            [{"type": "scatter"}],
+            [{"type": "scatter"}]]
+    )
+
+    fig.add_trace(
+        go.Table(header=dict(values=[k.replace(' ','<br>') for k in investing_dataset.columns[:]],
+                             font=dict(size=10), align="left"),
+                 cells=dict(values=[investing_dataset[k].tolist() for k in investing_dataset.columns[:]],
+                             align="left")
+        ), row=1, col=1,
+    )
+    fig.add_trace( go.Scatter( x = investing_dataset["Date"],
+                               y = investing_dataset["LME vol"],
+                               name = "Volume",
+                               line_color='#0000ff'),
+        row=2, col=1
+    )
+    fig.add_trace(
+        go.Candlestick(x    = investing_dataset['Date'],
+                       open = investing_dataset['LME open'],
+                       high = investing_dataset['LME high'],
+                       low  = investing_dataset['LME low'],
+                       close= investing_dataset['LME 3m'],
+                       name = 'investing.com'), row=3, col=1,
+    )
+
+    fig.add_trace(go.Scatter( x = westmetall_dataset['Date'],
+                              y = westmetall_dataset['LME 3m'],
+                              name = 'westmetall.com' ),
+                      row=3, col=1)
+    
+    print([*metalsapi_dataset])
+    for colname in [*metalsapi_dataset][1:]:
+        print(colname)
+        fig.add_trace(go.Scatter( x = metalsapi_dataset['Date'],
+                                  y = metalsapi_dataset[colname],
+                                  name = colname ),
+                      row=3, col=1)
+    print()
+    
+    fig.update_layout(
+        height=1200,
+        showlegend=True,
+        title_text="<i><b>LME 3-month prices & volumes</b></i>",
+    )
+
+    #fig.write_html("LME_prices_volumes.html")
+    #fig.show()
+    
+    return fig  
