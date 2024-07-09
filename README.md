@@ -26,7 +26,7 @@ Aquisition pipeline collects data scraping them from websites or utilizing certa
 * [**indicators of consumption**](https://github.com/KKobuszewski/aluminium-prediction/blob/main/readme/indicators.md#indicators-of-consumption)
 * [**indicators of market uncertainity**](https://github.com/KKobuszewski/aluminium-prediction/blob/main/readme/indicators.md#indicators-of-market-uncertainity)
 * [**Indicators of trade**](https://github.com/KKobuszewski/aluminium-prediction/blob/main/readme/indicators.md#indicators-of-trade)
-* [**USD/EUR ???**]
+* USD/EUR ???  <!--[**USD/EUR ???**]()-->
 
 <br>
 To determine dependencies between different timeseries i. e. using [cross-corelation](https://github.com/KKobuszewski/aluminium-prediction/blob/main/readme/timeseries_analysis.md#cross-correlation) or [transfer entropy](https://github.com/KKobuszewski/aluminium-prediction/blob/main/readme/timeseries_analysis.md#transfer-entropy).
