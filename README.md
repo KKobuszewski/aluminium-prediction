@@ -29,6 +29,7 @@ Aquisition pipeline collects data scraping them from websites or utilizing certa
 * USD/EUR ???  <!--[**USD/EUR ???**]()-->
 
 <br>
+
 To determine dependencies between different timeseries i. e. using [cross-corelation](https://github.com/KKobuszewski/aluminium-prediction/blob/main/readme/timeseries_analysis.md#cross-correlation) or [transfer entropy](https://github.com/KKobuszewski/aluminium-prediction/blob/main/readme/timeseries_analysis.md#transfer-entropy).
 
 <br>
