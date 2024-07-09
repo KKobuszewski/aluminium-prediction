@@ -20,22 +20,9 @@ Take a look at the hints in [readme/Kedro.md](https://github.com/KKobuszewski/al
 
 This pipeline is located at [/src/aluminium_prediction/pipelines/aquisition](https://github.com/KKobuszewski/aluminium-prediction/tree/main/src/aluminium_prediction/pipelines/aquisition).
 
-Aquisition pipeline collects data scraping them from websites or utilizing certain APIs.
-
-Datasets for **aluminium prices**[^1] are collected from:
-
-* [www.investing.com/](https://www.investing.com/commodities/aluminum-historical-data)
-
-* [www.westmetall.com](https://www.westmetall.com/en/markdaten.php?action=table&field=LME_Al_cash)
-
-* [metals-api.com](https://metals-api.com/documentation)
-
-* [finance.yahoo.com](https://finance.yahoo.com)
-
-
-[^1]: In the beginig I am going to focus on [LME 3-month price](https://www.lme.com/en/Metals/Non-ferrous/LME-Aluminium#Summary) in USD/t, probably cash & 1-,2-,3- month contracts can be considered in the future.
-
-Also see [here](https://github.com/KKobuszewski/aluminium-prediction/blob/main/readme/Aluminium_prices_sources.md) to get more details about prices.
+Aquisition pipeline collects data scraping them from websites or utilizing certain APIs and resulting dataset contains information about:
+* [**aluminium prices**](https://github.com/KKobuszewski/aluminium-prediction/blob/main/readme/Aluminium_prices_sources.md),
+* 
 
 <br>
 

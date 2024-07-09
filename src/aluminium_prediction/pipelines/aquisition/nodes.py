@@ -264,7 +264,7 @@ def visualize_aluminium_datasets(westmetall_dataset, investing_dataset):
     fig.tight_layout()
     
     return fig
- 
+
 
 def plotly_aluminium_datasets( westmetall_dataset : pd.DataFrame,
                                investing_dataset: pd.DataFrame,
@@ -309,23 +309,23 @@ def plotly_aluminium_datasets( westmetall_dataset : pd.DataFrame,
                                line_color='#0000ff'),
         row=2, col=1
     )
+    
     fig.add_trace(
         go.Candlestick(x    = investing_dataset['Date'],
                        open = investing_dataset['LME open'],
                        high = investing_dataset['LME high'],
                        low  = investing_dataset['LME low'],
                        close= investing_dataset['LME 3m'],
-                       name = 'investing.com'), row=3, col=1,
+                       name = 'investing.com'),
+        row=3, col=1,
     )
-
     fig.add_trace(go.Scatter( x = westmetall_dataset['Date'],
                               y = westmetall_dataset['LME 3m'],
                               name = 'westmetall.com' ),
-                      row=3, col=1)
-    
-    print([*metalsapi_dataset])
+                  row=3, col=1
+    )
+    #print([*metalsapi_dataset])
     for colname in [*metalsapi_dataset][1:]:
-        print(colname)
         fig.add_trace(go.Scatter( x = metalsapi_dataset['Date'],
                                   y = metalsapi_dataset[colname],
                                   name = colname ),
@@ -340,5 +340,56 @@ def plotly_aluminium_datasets( westmetall_dataset : pd.DataFrame,
 
     #fig.write_html("LME_prices_volumes.html")
     #fig.show()
+    
+    return fig
+
+
+
+
+def plotly_aluminium_prices( westmetall_dataset : pd.DataFrame,
+                               investing_dataset: pd.DataFrame,
+                               metalsapi_dataset: pd.DataFrame ):
+    """_summary_
+
+    ```
+    poetry run kedro run --from-nodes "plotly_aluminium_node"
+    ```
+    
+    Args:
+        westmetall_dataset (pd.DataFrame): _description_
+        investing_dataset (pd.DataFrame): _description_
+        metalsapi_dataset (pd.DataFrame): _description_
+
+    Returns:
+        _type_: _description_
+    """
+    westmetall_dataset['Date'] = timeutils.convert_to_datetime(westmetall_dataset['Date'])
+    investing_dataset['Date']  = timeutils.convert_to_datetime(investing_dataset['Date'])
+    metalsapi_dataset['Date']  = timeutils.convert_to_datetime(metalsapi_dataset['Date'])
+    
+    # create plot
+    fig = go.Figure()
+    fig.add_trace(go.Candlestick(x    = investing_dataset['Date'],
+                                 open = investing_dataset['LME open'],
+                                 high = investing_dataset['LME high'],
+                                 low  = investing_dataset['LME low'],
+                                 close= investing_dataset['LME 3m'],
+                                 name = 'investing.com'))
+    fig.add_trace(go.Scatter( x = westmetall_dataset['Date'],
+                              y = westmetall_dataset['LME 3m'],
+                              name = 'westmetall.com' ))
+    for colname in [*metalsapi_dataset][1:]:
+        fig.add_trace(go.Scatter( x = metalsapi_dataset['Date'],
+                                  y = metalsapi_dataset[colname],
+                                  name = colname ))
+    print()
+    
+    fig.update_layout(
+        xaxis_range = [datetime.date(2009,1,1),datetime.datetime.today()], #,datetime.date(2024,7,1)
+        yaxis_range = [1000,3500],
+        height=1200,
+        showlegend=True,
+        title_text="<i><b>LME 3-month prices & volumes</b></i>",
+    )
     
     return fig  

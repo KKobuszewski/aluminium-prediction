@@ -13,8 +13,6 @@ Datasets for **aluminium prices**[^1] are collected from:
 * [finance.yahoo.com](https://finance.yahoo.com)
 
 
-In the beginig I am going to focus on [**LME 3-month price**](https://www.lme.com/en/Metals/Non-ferrous/LME-Aluminium#Summary)  **in USD/t**.
-
 [^1]: Probably 1-,2-,3- month contracts can be considered in the future.
 
 <br>

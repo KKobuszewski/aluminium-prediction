@@ -112,3 +112,8 @@ datasets_comparison_plot:
   type: datasets.PlotlyHTMLDataset
   #type: PlotlyHTMLDataset
   filepath: 'data/08_reporting/datasets_comparison_plot.html'
+
+
+prices_comparison_plot:
+  type: datasets.PlotlyHTMLDataset
+  filepath: 'data/08_reporting/prices_comparison_plot.html'

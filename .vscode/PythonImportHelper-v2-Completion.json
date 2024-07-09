@@ -192,6 +192,14 @@
         "documentation": {}
     },
     {
+        "label": "plotly_aluminium_prices",
+        "importPath": "aluminium_prediction.pipelines.aquisition.nodes",
+        "description": "aluminium_prediction.pipelines.aquisition.nodes",
+        "isExtraImport": true,
+        "detail": "aluminium_prediction.pipelines.aquisition.nodes",
+        "documentation": {}
+    },
+    {
         "label": "os",
         "kind": 6,
         "isExtraImport": true,
@@ -637,6 +645,15 @@
         "importPath": "src.aluminium_prediction.pipelines.aquisition.nodes",
         "description": "src.aluminium_prediction.pipelines.aquisition.nodes",
         "peekOfCode": "def plotly_aluminium_datasets( westmetall_dataset : pd.DataFrame,\n                               investing_dataset: pd.DataFrame,\n                               metalsapi_dataset: pd.DataFrame ):\n    \"\"\"_summary_\n    ```\n    poetry run kedro run --from-nodes \"plotly_aluminium_node\"\n    ```\n    Args:\n        westmetall_dataset (pd.DataFrame): _description_\n        investing_dataset (pd.DataFrame): _description_",
+        "detail": "src.aluminium_prediction.pipelines.aquisition.nodes",
+        "documentation": {}
+    },
+    {
+        "label": "plotly_aluminium_prices",
+        "kind": 2,
+        "importPath": "src.aluminium_prediction.pipelines.aquisition.nodes",
+        "description": "src.aluminium_prediction.pipelines.aquisition.nodes",
+        "peekOfCode": "def plotly_aluminium_prices( westmetall_dataset : pd.DataFrame,\n                               investing_dataset: pd.DataFrame,\n                               metalsapi_dataset: pd.DataFrame ):\n    \"\"\"_summary_\n    ```\n    poetry run kedro run --from-nodes \"plotly_aluminium_node\"\n    ```\n    Args:\n        westmetall_dataset (pd.DataFrame): _description_\n        investing_dataset (pd.DataFrame): _description_",
         "detail": "src.aluminium_prediction.pipelines.aquisition.nodes",
         "documentation": {}
     },

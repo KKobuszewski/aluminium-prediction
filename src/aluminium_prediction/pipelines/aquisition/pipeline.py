@@ -7,7 +7,8 @@ generated using Kedro 0.19.3
 from kedro.pipeline import Pipeline, pipeline, node
 from aluminium_prediction.pipelines.aquisition.nodes import (westmetall_download, westmetall_actualize, 
                                                              investing_download, investing_actualize,
-                                                             visualize_aluminium_datasets, plotly_aluminium_datasets)
+                                                             visualize_aluminium_datasets, plotly_aluminium_datasets,
+                                                             plotly_aluminium_prices)
 
 
 """
@@ -54,6 +55,13 @@ def create_pipeline(**kwargs) -> Pipeline:
                 inputs=["westmetall_dataset_updated","investing_dataset_updated","metalsapi_dataset_updated"],
                 outputs="datasets_comparison_plot",
                 name="plotly_aluminium_node",
+                
+            ),
+            node(
+                plotly_aluminium_prices,
+                inputs=["westmetall_dataset_updated","investing_dataset_updated","metalsapi_dataset_updated"],
+                outputs="prices_comparison_plot",
+                name="prices_aluminium_node",
                 
             )
         ]
