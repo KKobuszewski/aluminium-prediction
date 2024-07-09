@@ -22,19 +22,9 @@ This pipeline is located at [/src/aluminium_prediction/pipelines/aquisition](htt
 
 Aquisition pipeline collects data scraping them from websites or utilizing certain APIs and resulting dataset contains information about:
 * [**aluminium prices**](https://github.com/KKobuszewski/aluminium-prediction/blob/main/readme/Aluminium_prices_sources.md),
-* 
-
-<br>
-
-**Aluminium production**
-
-https://international-aluminium.org/statistics/primary-aluminium-production/
-
-<br>
-
-**Indicators of consumption**
-
-* GDP???
+* [**aluminium production**](https://international-aluminium.org/statistics/primary-aluminium-production/)
+* **indicators of consumption** <br>
+GDP???
 
 
 **Indicators of market uncertainity**
