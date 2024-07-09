@@ -29,18 +29,14 @@ Aquisition pipeline collects data scraping them from websites or utilizing certa
 * [**USD/EUR ???**]
 
 <br>
-To determine dependencies between different timeseries (i. e. using [cross-corelation](https://github.com/KKobuszewski/aluminium-prediction/blob/main/readme/timeseries_analysis.md) or [transfer entropy])
+To determine dependencies between different timeseries i. e. using [cross-corelation](https://github.com/KKobuszewski/aluminium-prediction/blob/main/readme/timeseries_analysis.md#cross-correlation) or [transfer entropy](https://github.com/KKobuszewski/aluminium-prediction/blob/main/readme/timeseries_analysis.md#transfer-entropy).
 
-This part should also produce raport about current data.
 <br>
 
-### Transfer entropy
+**This part should also produce raport about current data.**
 
-See
+<br>
 
-https://code.google.com/archive/p/transfer-entropy-toolbox/source/default/source
-
-https://github.com/majianthu/transferentropy
 
 
 
