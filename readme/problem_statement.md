@@ -12,8 +12,7 @@ y(t) &=h^{(0)}+\sum _{n=1}^{N}\int _{0}^{T \to \infty}\cdots \int _{0}^{T \to \i
 \int_{\mathbb{R}^2_+} h^{(2)}(\tau_1, \tau_2)x(t-\tau_1)x(t-\tau_2) \,
 d\tau_1 d\tau_2 + 
 \int_{\mathbb{R}^3_+} h^{(3)}(\tau_1, \tau_2,
-\tau_3)x(t-\tau_1)x(t-\tau_2)x(t-\tau_3) \, d\tau_1 d\tau_2 d\tau_3
-+ \ldots
+\tau_3)x(t-\tau_1)x(t-\tau_2)x(t-\tau_3) \, d\tau_1 d\tau_2 d\tau_3 + \ldots
 \end{align}
 $$
 
@@ -56,8 +55,7 @@ x_m(t-\tau_1)
 \begin{array}{cccc}
 x_1(t-\tau_2) & x_2(t-\tau_2) & \ldots & x_m(t-\tau_2)
 \end{array}
-\right]
-+ \ldots
+\right] + \ldots
 \end{align}
 $$
 
