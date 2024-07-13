@@ -5,6 +5,7 @@
 In more mathimatical language we are assuming that there exists an operator mapping all the past values of $\left[x_1~x_2~\ldots~x_m~y \right]$ to future value of $y$. Probably this operator can be expanded as Volterra (or Wiener) series.
 
 For $y(t)$ dependent on single function $x(t)$ this Volterra series can be written as
+
 $$
 \begin{align}
 y(t) &=h^{(0)}+\sum _{n=1}^{N}\int _{0}^{T \to \infty}\cdots \int _{0}^{T \to \infty}h^{(n)}(\tau _{1},\dots ,\tau _{n})\prod _{j=1}^{n}x(t-\tau _{j})\,d\tau _{j} = \\
@@ -17,6 +18,7 @@ d\tau_1 d\tau_2 +
 $$
 
 For $y(t)$ dependent on multiple functions $x_1(t),x_2(t), \ldots, x_m(t)$ this Volterra series should be written like following:
+
 $$
 \begin{align}
 y(t) &= h^{(0)} +

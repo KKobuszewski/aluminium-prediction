@@ -20,6 +20,11 @@ data/**
 # keep also the example dataset
 !data/01_raw/*
 
+# some other stuff
+info.log
+console_history.txt
+session_store.db
+stats.json
 
 ##########################
 # Common files

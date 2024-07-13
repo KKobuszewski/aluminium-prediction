@@ -53,7 +53,7 @@ $$
 
 This unknown mapping will be approximated using supervised machine learing methods, i. e. neural networks.
 
-See more [here](https://github.com/KKobuszewski/aluminium-prediction/blob/main/readme/aluminium_prices_sources.md).
+See more [here](https://github.com/KKobuszewski/aluminium-prediction/blob/main/readme/problem_statement.md).
 
 <br>
 <br>
