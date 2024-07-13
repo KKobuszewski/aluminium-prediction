@@ -11,7 +11,7 @@ Take a look at the hints in [readme/Kedro.md](https://github.com/KKobuszewski/al
 
 ## Problem statement
 
-We want to predict future values of function $y(t)$ that can depend on past values of some other functions $x_1, x_2, \ldots, x_m$ in the past as well as on the past values of $y$ itself.
+We want to predict future values of function $y(t)$ and we assume that it can depend on past values of some other functions $x_1, x_2, \ldots, x_m$ in the past as well as on the past values of $y$ itself.
 
 In discretized form (with constant timestep $\Delta t$) we can write it as mapping:
 
@@ -43,8 +43,12 @@ y(t-k\Delta t)
 \end{array}\right]
 \qquad\mapsto\qquad
 \left[\begin{array}{c}
-y(t+\Delta t) \\ y(t+2\Delta t) \\ \vdots \\ y(t+l\Delta t) 
+y(t+\Delta t) \\
+y(t+2\Delta t) \\
+\vdots \\
+y(t+l\Delta t) \\
 \end{array}\right]
+\qquad\qquad k,l \in \mathbb{Z}_+
 $$
 
 This unknown mapping will be approximated using supervised machine learing methods, i. e. neural networks.
