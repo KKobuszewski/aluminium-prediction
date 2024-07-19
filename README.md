@@ -105,8 +105,34 @@ Raports should contain current most important price indicators and price predict
     * As we can have data from different sources (which sligthly differ) we can produce multiple different time series
 
 
-## Neural networks
+## Literature
 
-https://medium.com/@srmousavi25/how-to-fix-a-common-mistake-in-lstm-time-series-forecasting-4d4d51d9948f
+### Transfer of "information" between timeseries
 
+We can aim two issues concernig information/entropy/complexcity of timeseries:
+
+1. How much information is in given timeseries?
+2. We want to describe to determine if adding new timeseries to dataset can improve inference performace i. e. if there is information transfer between two series.
+
+Measures for first issuse can be [Approximate Entropy](https://en.wikipedia.org/wiki/Approximate_entropy) (AppEn), [Sample Entropy](https://en.wikipedia.org/wiki/Sample_entropy) (SampEn) or Renyi Entropy. Second issue can be solved using some measures of information transfer, i. e. [Transfer Entropy](https://en.wikipedia.org/wiki/Transfer_entropy),[^1]? 
+
+[^1]: [Cross-entropy](https://en.wikipedia.org/wiki/Cross-entropy) is somehow different, because it is defined on two probability distributions and not timeseries, but in [EntopyHub](https://www.entropyhub.xyz/python/Functions/Cross.html) are some functions for estimation of entropy between two univariate data sequences.
+
+Python implementaion of entropy algorithms is provided by [EntropyHub](https://www.entropyhub.xyz/python/Functions/Base.html)
+
+Usage of AppEn in financial timeseries was described in [S. Pincus, R. E. Kalman, _Irregularity, volatility, risk, and financial market time series_](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC518821/).
+
+
+[Transfer Entropy](https://en.wikipedia.org/wiki/Transfer_entropy) is most promising approach to measuring transfer of information between timeseries. It was introduced in [T. Schreiber, Phys. Rev. Lett. 85 (2000) 461.](https://arxiv.org/pdf/nlin/0001042) and described in wider context by [P. Jizba, H. Kleinert, M. Shefaat _Rényi's information transfer between financial time series_ (Physica A: Statistical Mechanics and Its Applications. 391 (10): 2971–2989.)](https://arxiv.org/pdf/1106.5913). Python implementaion is provided by [copent](https://pypi.org/project/copent/) package, but olny as an approximation in terms of Coupola entropy (see). Github repository for copent [here](https://github.com/majianthu/pycopent/blob/master/copent/copent.py).
+
+
+### Neural networks
+
+Example applications of neural networks in financial time series forecasting are available, i. e.:
+
+* https://medium.com/@srmousavi25/how-to-fix-a-common-mistake-in-lstm-time-series-forecasting-4d4d51d9948f
+
+* https://medium.com/@mskmay66/deep-learning-and-stock-time-series-data-ff6a75cfddd9
+
+* https://medium.com/@mskmay66/transformers-vs-lstm-for-stock-price-time-series-prediction-3a26fcc1a782
 
