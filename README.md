@@ -11,7 +11,7 @@ Take a look at the hints in [readme/Kedro.md](https://github.com/KKobuszewski/al
 
 ## Project plan
 
-![](https://github.com/KKobuszewski/aluminium-prediction/blob/main/readme/Kopia%20Diagram%20bez%20tytu%C5%82u.drawio.svg)
+See project diagram [here](https://github.com/KKobuszewski/aluminium-prediction/blob/main/readme/Kopia%20Diagram%20bez%20tytu%C5%82u.drawio.svg).
 
 <br>
 <br>
