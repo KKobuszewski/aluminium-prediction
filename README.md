@@ -113,6 +113,10 @@ Raports should contain current most important price indicators and price predict
     * Transformer NN demand less parameters in comparison with LSTM. Some convolution layers can also improve performance (see [here](https://medium.com/@mskmay66/deep-learning-and-stock-time-series-data-ff6a75cfddd9)).
     * As we can have data from different sources (which sligthly differ) we can produce multiple different time series
 
+2. We don't expect data to be stationary in time?
+   * Model should not be trained with earlier data to be tested with later data/predict new data
+   * How to choose data 'points' for test/valid/train from dataset? Randomly? K-fold? https://stats.stackexchange.com/questions/14099/using-k-fold-cross-validation-for-time-series-model-selection
+
 
 ## Literature
 
@@ -144,4 +148,27 @@ Example applications of neural networks in financial time series forecasting are
 * https://medium.com/@mskmay66/deep-learning-and-stock-time-series-data-ff6a75cfddd9
 
 * https://medium.com/@mskmay66/transformers-vs-lstm-for-stock-price-time-series-prediction-3a26fcc1a782
+
+### Forecating models
+
+[gluonts](https://ts.gluon.ai/stable/index.html), https://ts.gluon.ai/stable/tutorials/advanced_topics/howto_pytorch_lightning.html
+
+https://github.com/thuml/Time-Series-Library/tree/main
+
+[uni2ts/moirai](https://github.com/SalesforceAIResearch/uni2ts/blob/main/example/moirai_forecast_pandas.ipynb), https://huggingface.co/Salesforce/moirai-1.0-R-large
+
+[Time Series Transformer](https://huggingface.co/docs/transformers/model_doc/time_series_transformer#transformers.TimeSeriesTransformerForPrediction) (TST), https://huggingface.co/blog/time-series-transformers
+
+$$
+\begin{array}{ccccc}
+ & \text{TST} & \text{moirai} & \text{TSlib}\\
+\text{static real features} & yes & no & no & \text{data with lower sampling (i.e GDP)}\\
+\text{(past) dynamic real features} & no & \text{prediction only} & no & \text{features we don't want to predict}\\
+\\
+\end{array}
+$$
+
+### Information about deployment
+
+https://gitlab.com/inzynier-ai/
 
