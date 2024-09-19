@@ -24,8 +24,8 @@ from aluminium_prediction import timeutils, scrapping
 
 
 
-def westmetall_download(page_url = 'https://www.westmetall.com/en/markdaten.php?action=table&field=LME_Al_cash',
-                        all=False):
+def westmetall_download(page_url: str = 'https://www.westmetall.com/en/markdaten.php?action=table&field=LME_Al_cash',
+                        all: bool = False) -> pd.DataFrame:
     """_summary_
 
     NOTE: This function can be used to get whole dataset from the url (data are set statically in the html).
@@ -98,7 +98,8 @@ def westmetall_download(page_url = 'https://www.westmetall.com/en/markdaten.php?
                           'LME 3m'    : lme_3m[:cnt],
                           'LME Stock' : lme_stock[:cnt] })
 
-def westmetall_actualize(dataset, update):
+def westmetall_actualize(dataset: pd.DataFrame,
+                         update: pd.DataFrame) -> pd.DataFrame:
     # convert to proper datetime object
     #dataset['Date'] = dataset['Date'].apply(lambda x: datetime.date( *map(int,x.split('-')) ))
     dataset['Date'] = timeutils.convert_to_datetime(dataset['Date'])
@@ -120,8 +121,10 @@ def westmetall_actualize(dataset, update):
     print()
     return new_dataset
 
-def dataset_actualize(dataset, update):
-    # convert to proper datetime object
+
+def dataset_actualize(dataset: pd.DataFrame,
+                      update: pd.DataFrame) -> pd.DataFrame:
+    # convert to proper datetime object (NOTE: while saving to csv date is converted to str)
     dataset['Date'] = timeutils.convert_to_datetime(dataset['Date'])
            
     if type(dataset['Date'][0]) != type(update['Date'][0]):
@@ -136,12 +139,12 @@ def dataset_actualize(dataset, update):
     return new_dataset
 
 
-def metals_api_convert_price(price):
+def metals_api_convert_price(price: float) -> float:
     """_summary_
     This function converts price in USD per troy ounce to normal units...
     
     Args:
-        price (_type_): _description_
+        price (float): _description_
 
     Returns:
         _type_: _description_
@@ -154,7 +157,7 @@ def metalsapi_download():
     return None
 
 
-def investing_download(page_url='https://www.investing.com/commodities/aluminum-historical-data'):
+def investing_download(page_url: str = 'https://www.investing.com/commodities/aluminum-historical-data'):
     """_summary_
 
     NOTE: This function cannot be used to download whole dataset from the url.
@@ -188,14 +191,21 @@ def investing_download(page_url='https://www.investing.com/commodities/aluminum-
         txt = txt.replace(',','')
         for line in txt.split('\n'):
             split = line.split(' ')
-            if len(split) == 7:
-                dates[cnt]    = datetime.datetime.strptime(split[0], "%m/%d/%Y").date()
-                lme[cnt]      = float(split[1])
-                lme_open[cnt] = float(split[2])
-                lme_high[cnt] = float(split[3])
-                lme_low[cnt]  = float(split[4])
-                lme_vol[cnt]  = float(split[5])
+            if len(split) == 9:
+                dates[cnt]    = datetime.datetime.strptime('/'.join(split[:3]), "%b/%d/%Y").date()
+                lme[cnt]      = float(split[3])
+                lme_open[cnt] = float(split[4])
+                lme_high[cnt] = float(split[5])
+                lme_low[cnt]  = float(split[6])
+                lme_vol[cnt]  = float(split[7])
                 cnt += 1
+    
+    print(pd.DataFrame({ 'Date'      : dates[:cnt],
+                          'LME 3m'  : lme[:cnt],
+                          'LME open'  : lme_open[:cnt],
+                          'LME high'  : lme_high[:cnt],
+                          'LME low'   : lme_low[:cnt],
+                          'LME vol'   : lme_vol[:cnt]   }))
     
     return pd.DataFrame({ 'Date'      : dates[:cnt],
                           'LME 3m'  : lme[:cnt],
@@ -205,7 +215,8 @@ def investing_download(page_url='https://www.investing.com/commodities/aluminum-
                           'LME vol'   : lme_vol[:cnt]   })
 
 
-def investing_actualize(dataset, update):
+def investing_actualize(dataset: pd.DataFrame,
+                         update: pd.DataFrame) -> pd.DataFrame:
     # convert to proper datetime object
     #dataset['Date'] = dataset['Date'].apply(lambda x: datetime.date( *map(int,x.split('-')) ))
     dataset['Date'] = timeutils.convert_to_datetime(dataset['Date'])
@@ -224,15 +235,23 @@ def investing_actualize(dataset, update):
     new_dataset = pd.concat([dataset, update])
     new_dataset = new_dataset.sort_values('Date')
     new_dataset = new_dataset.drop_duplicates()
-    print(new_dataset)
-    #
-    #print(new_dataset.head())
     print(new_dataset.tail(40))
     
     return new_dataset
 
 
-def visualize_aluminium_datasets(westmetall_dataset, investing_dataset):
+def investing_correct_volumes(dataset: pd.DataFrame) -> pd.DataFrame:
+    dataset['Date'] = timeutils.convert_to_datetime(dataset['Date'])
+    
+    idx = (dataset['Date'] > datetime.date(2019, 9, 20)) & (dataset['Date'] < datetime.date(2020, 7, 4))
+    dataset['LME vol'] = dataset['LME vol']*idx.astype(float)*0.1
+    
+    return dataset
+    
+
+
+def visualize_aluminium_datasets(westmetall_dataset: pd.DataFrame, 
+                                 investing_dataset: pd.DataFrame):
     westmetall_dataset['Date'] = timeutils.convert_to_datetime(westmetall_dataset['Date'])
     investing_dataset['Date'] = timeutils.convert_to_datetime(investing_dataset['Date'])
     
@@ -266,7 +285,7 @@ def visualize_aluminium_datasets(westmetall_dataset, investing_dataset):
     return fig
 
 
-def plotly_aluminium_datasets( westmetall_dataset : pd.DataFrame,
+def plotly_aluminium_datasets( westmetall_dataset: pd.DataFrame,
                                investing_dataset: pd.DataFrame,
                                metalsapi_dataset: pd.DataFrame ):
     """_summary_
@@ -385,7 +404,7 @@ def plotly_aluminium_prices( westmetall_dataset : pd.DataFrame,
     print()
     
     fig.update_layout(
-        xaxis_range = [datetime.date(2009,1,1),datetime.datetime.today()], #,datetime.date(2024,7,1)
+        xaxis_range = [datetime.date(2009,1,1),datetime.datetime.today()],
         yaxis_range = [1000,3500],
         height=1200,
         showlegend=True,

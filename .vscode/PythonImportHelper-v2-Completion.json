@@ -176,6 +176,14 @@
         "documentation": {}
     },
     {
+        "label": "investing_correct_volumes",
+        "importPath": "aluminium_prediction.pipelines.aquisition.nodes",
+        "description": "aluminium_prediction.pipelines.aquisition.nodes",
+        "isExtraImport": true,
+        "detail": "aluminium_prediction.pipelines.aquisition.nodes",
+        "documentation": {}
+    },
+    {
         "label": "visualize_aluminium_datasets",
         "importPath": "aluminium_prediction.pipelines.aquisition.nodes",
         "description": "aluminium_prediction.pipelines.aquisition.nodes",
@@ -572,7 +580,7 @@
         "kind": 2,
         "importPath": "src.aluminium_prediction.pipelines.aquisition.nodes",
         "description": "src.aluminium_prediction.pipelines.aquisition.nodes",
-        "peekOfCode": "def westmetall_download(page_url = 'https://www.westmetall.com/en/markdaten.php?action=table&field=LME_Al_cash',\n                        all=False):\n    \"\"\"_summary_\n    NOTE: This function can be used to get whole dataset from the url (data are set statically in the html).\n    Args:\n        page_url (str, optional): _description_. Defaults to 'https://www.westmetall.com/en/markdaten.php?action=table&field=LME_Al_cash'.\n        all (bool, optional): _description_. Defaults to False.\n    Returns:\n        _type_: _description_\n    \"\"\"",
+        "peekOfCode": "def westmetall_download(page_url: str = 'https://www.westmetall.com/en/markdaten.php?action=table&field=LME_Al_cash',\n                        all: bool = False) -> pd.DataFrame:\n    \"\"\"_summary_\n    NOTE: This function can be used to get whole dataset from the url (data are set statically in the html).\n    Args:\n        page_url (str, optional): _description_. Defaults to 'https://www.westmetall.com/en/markdaten.php?action=table&field=LME_Al_cash'.\n        all (bool, optional): _description_. Defaults to False.\n    Returns:\n        _type_: _description_\n    \"\"\"",
         "detail": "src.aluminium_prediction.pipelines.aquisition.nodes",
         "documentation": {}
     },
@@ -581,7 +589,7 @@
         "kind": 2,
         "importPath": "src.aluminium_prediction.pipelines.aquisition.nodes",
         "description": "src.aluminium_prediction.pipelines.aquisition.nodes",
-        "peekOfCode": "def westmetall_actualize(dataset, update):\n    # convert to proper datetime object\n    #dataset['Date'] = dataset['Date'].apply(lambda x: datetime.date( *map(int,x.split('-')) ))\n    dataset['Date'] = timeutils.convert_to_datetime(dataset['Date'])\n    if type(dataset['Date'][0]) != type(update['Date'][0]):\n        print( type(dataset['Date'][0]) )\n        print( type(update['Date'][0]) )\n        raise ValueError\n    new_dataset = pd.concat([dataset, update])\n    new_dataset = new_dataset.sort_values('Date')",
+        "peekOfCode": "def westmetall_actualize(dataset: pd.DataFrame,\n                         update: pd.DataFrame) -> pd.DataFrame:\n    # convert to proper datetime object\n    #dataset['Date'] = dataset['Date'].apply(lambda x: datetime.date( *map(int,x.split('-')) ))\n    dataset['Date'] = timeutils.convert_to_datetime(dataset['Date'])\n    if type(dataset['Date'][0]) != type(update['Date'][0]):\n        print( type(dataset['Date'][0]) )\n        print( type(update['Date'][0]) )\n        raise ValueError\n    new_dataset = pd.concat([dataset, update])",
         "detail": "src.aluminium_prediction.pipelines.aquisition.nodes",
         "documentation": {}
     },
@@ -590,7 +598,7 @@
         "kind": 2,
         "importPath": "src.aluminium_prediction.pipelines.aquisition.nodes",
         "description": "src.aluminium_prediction.pipelines.aquisition.nodes",
-        "peekOfCode": "def dataset_actualize(dataset, update):\n    # convert to proper datetime object\n    dataset['Date'] = timeutils.convert_to_datetime(dataset['Date'])\n    if type(dataset['Date'][0]) != type(update['Date'][0]):\n        print( type(dataset['Date'][0]) )\n        print( type(update['Date'][0]) )\n        raise ValueError\n    new_dataset = pd.concat([dataset, update])\n    new_dataset = new_dataset.sort_values('Date')\n    new_dataset = new_dataset.drop_duplicates()",
+        "peekOfCode": "def dataset_actualize(dataset: pd.DataFrame,\n                      update: pd.DataFrame) -> pd.DataFrame:\n    # convert to proper datetime object (NOTE: while saving to csv date is converted to str)\n    dataset['Date'] = timeutils.convert_to_datetime(dataset['Date'])\n    if type(dataset['Date'][0]) != type(update['Date'][0]):\n        print( type(dataset['Date'][0]) )\n        print( type(update['Date'][0]) )\n        raise ValueError\n    new_dataset = pd.concat([dataset, update])\n    new_dataset = new_dataset.sort_values('Date')",
         "detail": "src.aluminium_prediction.pipelines.aquisition.nodes",
         "documentation": {}
     },
@@ -599,7 +607,7 @@
         "kind": 2,
         "importPath": "src.aluminium_prediction.pipelines.aquisition.nodes",
         "description": "src.aluminium_prediction.pipelines.aquisition.nodes",
-        "peekOfCode": "def metals_api_convert_price(price):\n    \"\"\"_summary_\n    This function converts price in USD per troy ounce to normal units...\n    Args:\n        price (_type_): _description_\n    Returns:\n        _type_: _description_\n    \"\"\"\n    return (1.0/price)/31.1035*1000000\ndef metalsapi_download():",
+        "peekOfCode": "def metals_api_convert_price(price: float) -> float:\n    \"\"\"_summary_\n    This function converts price in USD per troy ounce to normal units...\n    Args:\n        price (float): _description_\n    Returns:\n        _type_: _description_\n    \"\"\"\n    return (1.0/price)/31.1035*1000000\ndef metalsapi_download():",
         "detail": "src.aluminium_prediction.pipelines.aquisition.nodes",
         "documentation": {}
     },
@@ -608,7 +616,7 @@
         "kind": 2,
         "importPath": "src.aluminium_prediction.pipelines.aquisition.nodes",
         "description": "src.aluminium_prediction.pipelines.aquisition.nodes",
-        "peekOfCode": "def metalsapi_download():\n    # TODO\n    return None\ndef investing_download(page_url='https://www.investing.com/commodities/aluminum-historical-data'):\n    \"\"\"_summary_\n    NOTE: This function cannot be used to download whole dataset from the url.\n    Args:\n        page_url (str, optional): _description_. Defaults to 'https://www.investing.com/commodities/aluminum-historical-data'.\n    Returns:\n        _type_: _description_",
+        "peekOfCode": "def metalsapi_download():\n    # TODO\n    return None\ndef investing_download(page_url: str = 'https://www.investing.com/commodities/aluminum-historical-data'):\n    \"\"\"_summary_\n    NOTE: This function cannot be used to download whole dataset from the url.\n    Args:\n        page_url (str, optional): _description_. Defaults to 'https://www.investing.com/commodities/aluminum-historical-data'.\n    Returns:\n        _type_: _description_",
         "detail": "src.aluminium_prediction.pipelines.aquisition.nodes",
         "documentation": {}
     },
@@ -617,7 +625,7 @@
         "kind": 2,
         "importPath": "src.aluminium_prediction.pipelines.aquisition.nodes",
         "description": "src.aluminium_prediction.pipelines.aquisition.nodes",
-        "peekOfCode": "def investing_download(page_url='https://www.investing.com/commodities/aluminum-historical-data'):\n    \"\"\"_summary_\n    NOTE: This function cannot be used to download whole dataset from the url.\n    Args:\n        page_url (str, optional): _description_. Defaults to 'https://www.investing.com/commodities/aluminum-historical-data'.\n    Returns:\n        _type_: _description_\n    \"\"\"\n    driver = scrapping.get_selenium_driver()\n    driver.get(page_url)",
+        "peekOfCode": "def investing_download(page_url: str = 'https://www.investing.com/commodities/aluminum-historical-data'):\n    \"\"\"_summary_\n    NOTE: This function cannot be used to download whole dataset from the url.\n    Args:\n        page_url (str, optional): _description_. Defaults to 'https://www.investing.com/commodities/aluminum-historical-data'.\n    Returns:\n        _type_: _description_\n    \"\"\"\n    driver = scrapping.get_selenium_driver()\n    driver.get(page_url)",
         "detail": "src.aluminium_prediction.pipelines.aquisition.nodes",
         "documentation": {}
     },
@@ -626,7 +634,16 @@
         "kind": 2,
         "importPath": "src.aluminium_prediction.pipelines.aquisition.nodes",
         "description": "src.aluminium_prediction.pipelines.aquisition.nodes",
-        "peekOfCode": "def investing_actualize(dataset, update):\n    # convert to proper datetime object\n    #dataset['Date'] = dataset['Date'].apply(lambda x: datetime.date( *map(int,x.split('-')) ))\n    dataset['Date'] = timeutils.convert_to_datetime(dataset['Date'])\n    print(dataset.head())\n    print(update.head())\n    print( type(dataset['Date'][0]) )\n    print( type(update['Date'][0]) )\n    print()\n    print(100*'-')",
+        "peekOfCode": "def investing_actualize(dataset: pd.DataFrame,\n                         update: pd.DataFrame) -> pd.DataFrame:\n    # convert to proper datetime object\n    #dataset['Date'] = dataset['Date'].apply(lambda x: datetime.date( *map(int,x.split('-')) ))\n    dataset['Date'] = timeutils.convert_to_datetime(dataset['Date'])\n    print(dataset.head())\n    print(update.head())\n    print( type(dataset['Date'][0]) )\n    print( type(update['Date'][0]) )\n    print()",
+        "detail": "src.aluminium_prediction.pipelines.aquisition.nodes",
+        "documentation": {}
+    },
+    {
+        "label": "investing_correct_volumes",
+        "kind": 2,
+        "importPath": "src.aluminium_prediction.pipelines.aquisition.nodes",
+        "description": "src.aluminium_prediction.pipelines.aquisition.nodes",
+        "peekOfCode": "def investing_correct_volumes(dataset: pd.DataFrame) -> pd.DataFrame:\n    dataset['Date'] = timeutils.convert_to_datetime(dataset['Date'])\n    idx = (dataset['Date'] > datetime.date(2019, 9, 20)) & (dataset['Date'] < datetime.date(2020, 7, 4))\n    dataset['LME vol'] = dataset['LME vol']*idx.astype(float)*0.1\n    return dataset\ndef visualize_aluminium_datasets(westmetall_dataset: pd.DataFrame, \n                                 investing_dataset: pd.DataFrame):\n    westmetall_dataset['Date'] = timeutils.convert_to_datetime(westmetall_dataset['Date'])\n    investing_dataset['Date'] = timeutils.convert_to_datetime(investing_dataset['Date'])\n    fig, axes = plt.subplots(ncols=1, nrows=2, sharex=True, figsize=[20.,14.])",
         "detail": "src.aluminium_prediction.pipelines.aquisition.nodes",
         "documentation": {}
     },
@@ -635,7 +652,7 @@
         "kind": 2,
         "importPath": "src.aluminium_prediction.pipelines.aquisition.nodes",
         "description": "src.aluminium_prediction.pipelines.aquisition.nodes",
-        "peekOfCode": "def visualize_aluminium_datasets(westmetall_dataset, investing_dataset):\n    westmetall_dataset['Date'] = timeutils.convert_to_datetime(westmetall_dataset['Date'])\n    investing_dataset['Date'] = timeutils.convert_to_datetime(investing_dataset['Date'])\n    fig, axes = plt.subplots(ncols=1, nrows=2, sharex=True, figsize=[20.,14.])\n    ax1, ax2 = axes.ravel()\n    fig.suptitle('Aluminium LME 3-month prices')\n    # LME price plot\n    ax1.grid(True)\n    ax1.xaxis.set_major_locator(matplotlib.dates.YearLocator())\n    ax1.xaxis.set_minor_locator(matplotlib.dates.MonthLocator())",
+        "peekOfCode": "def visualize_aluminium_datasets(westmetall_dataset: pd.DataFrame, \n                                 investing_dataset: pd.DataFrame):\n    westmetall_dataset['Date'] = timeutils.convert_to_datetime(westmetall_dataset['Date'])\n    investing_dataset['Date'] = timeutils.convert_to_datetime(investing_dataset['Date'])\n    fig, axes = plt.subplots(ncols=1, nrows=2, sharex=True, figsize=[20.,14.])\n    ax1, ax2 = axes.ravel()\n    fig.suptitle('Aluminium LME 3-month prices')\n    # LME price plot\n    ax1.grid(True)\n    ax1.xaxis.set_major_locator(matplotlib.dates.YearLocator())",
         "detail": "src.aluminium_prediction.pipelines.aquisition.nodes",
         "documentation": {}
     },
@@ -644,7 +661,7 @@
         "kind": 2,
         "importPath": "src.aluminium_prediction.pipelines.aquisition.nodes",
         "description": "src.aluminium_prediction.pipelines.aquisition.nodes",
-        "peekOfCode": "def plotly_aluminium_datasets( westmetall_dataset : pd.DataFrame,\n                               investing_dataset: pd.DataFrame,\n                               metalsapi_dataset: pd.DataFrame ):\n    \"\"\"_summary_\n    ```\n    poetry run kedro run --from-nodes \"plotly_aluminium_node\"\n    ```\n    Args:\n        westmetall_dataset (pd.DataFrame): _description_\n        investing_dataset (pd.DataFrame): _description_",
+        "peekOfCode": "def plotly_aluminium_datasets( westmetall_dataset: pd.DataFrame,\n                               investing_dataset: pd.DataFrame,\n                               metalsapi_dataset: pd.DataFrame ):\n    \"\"\"_summary_\n    ```\n    poetry run kedro run --from-nodes \"plotly_aluminium_node\"\n    ```\n    Args:\n        westmetall_dataset (pd.DataFrame): _description_\n        investing_dataset (pd.DataFrame): _description_",
         "detail": "src.aluminium_prediction.pipelines.aquisition.nodes",
         "documentation": {}
     },
@@ -806,7 +823,7 @@
         "kind": 2,
         "importPath": "src.aluminium_prediction.timeutils",
         "description": "src.aluminium_prediction.timeutils",
-        "peekOfCode": "def convert_to_datetime(column):\n    return column.apply(lambda x: datetime.date( *map(int,x.split('-')) ))\ndef last_day_of_month(any_day):\n    # The day 28 exists in every month. 4 days later, it's always next month\n    next_month = any_day.replace(day=28) + datetime.timedelta(days=4)\n    # subtracting the number of the current day brings us back one month\n    return next_month - datetime.timedelta(days=next_month.day)",
+        "peekOfCode": "def convert_to_datetime(column):\n    return column.apply(lambda x: datetime.date( *map(int,str(x).split('-')) ))\ndef last_day_of_month(any_day):\n    # The day 28 exists in every month. 4 days later, it's always next month\n    next_month = any_day.replace(day=28) + datetime.timedelta(days=4)\n    # subtracting the number of the current day brings us back one month\n    return next_month - datetime.timedelta(days=next_month.day)",
         "detail": "src.aluminium_prediction.timeutils",
         "documentation": {}
     },

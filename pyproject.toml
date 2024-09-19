@@ -7,9 +7,12 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.10"
-kedro = "^0.19.4"
+numpy = "1.26.4"
+pandas = "2.1.4"
+kedro = "0.19.4"
 kedro-viz = "^9.0.0"
 kedro-datasets = {extras = ["pandas-csvdataset", "pandas-parquetdataset"], version = "^3.0.0"}
+selenium = "4.16.0"
 emd = "^0.7.0"
 copent = "^0.5.1"
 statsmodels = "^0.14.2"

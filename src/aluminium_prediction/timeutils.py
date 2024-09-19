@@ -18,7 +18,7 @@ month_dict = { 'January'  : 1,
 
 
 def convert_to_datetime(column):
-    return column.apply(lambda x: datetime.date( *map(int,x.split('-')) ))
+    return column.apply(lambda x: datetime.date( *map(int,str(x).split('-')) ))
 
 
 def last_day_of_month(any_day):
